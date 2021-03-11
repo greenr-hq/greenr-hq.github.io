@@ -287,13 +287,13 @@ function goHome(){
 }
 
 function load(){
-    updateInformation();
     plants = readCookie('plants');
+    updateInformation();
 }
 
 function save(){
-    updateInformation();
     writeCookie('plants', plants);
+    updateInformation();
 }
 
 function updateInformation(){
