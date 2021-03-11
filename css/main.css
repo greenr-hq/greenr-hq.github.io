@@ -5,7 +5,6 @@ body {
     margin: auto;
     width: 50%;
     overflow: hidden;
-    position: fixed;
 }
 
 #pre {
@@ -46,7 +45,7 @@ h2 {
     user-select: none;
     overflow-y: auto;
     overflow-x: hidden;
-    height: 40vh;
+    height: 60vh;
 }
 
 #edit {
@@ -190,24 +189,22 @@ input[type="date"]::-webkit-calendar-picker-indicator {
 }
 
 ::-webkit-scrollbar {
+    transition: all 0.2s linear;
     width: 20px;
   }
 
 
 ::-webkit-scrollbar-track {
-    background: #f1f1f1;
-    border-radius: .3rem;
+    background: rgb(96, 94, 102);
 }
 
 
 ::-webkit-scrollbar-thumb {
-    background: #888;
-    border: 5px solid #f1f1f1;
-    border-radius: .3rem;
+    background: rgb(61, 62, 65);
+    border: 5px solid rgb(32, 33, 36);
 }
 
 ::-webkit-scrollbar-thumb:hover {
-    background: #555;
-    border: 5px solid #f1f1f1;
-    border-radius: .3rem;
+    background: rgb(65, 66, 70);
+    border: 5px solid rgb(32, 33, 36);
 }
