@@ -44,7 +44,9 @@ h2 {
     transition: visibility 0.2s linear, opacity 0.2s linear;
     margin: 10px;
     user-select: none;
-    overflow: auto;
+    overflow-y: auto;
+    overflow-x: hidden;
+    height: 40vh;
 }
 
 #edit {
@@ -185,4 +187,27 @@ input[type="date"]::-webkit-inner-spin-button,
 input[type="date"]::-webkit-calendar-picker-indicator {
     display: none;
     -webkit-appearance: none;
+}
+
+::-webkit-scrollbar {
+    width: 20px;
+  }
+
+
+::-webkit-scrollbar-track {
+    background: #f1f1f1;
+    border-radius: .3rem;
+}
+
+
+::-webkit-scrollbar-thumb {
+    background: #888;
+    border: 5px solid #f1f1f1;
+    border-radius: .3rem;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #555;
+    border: 5px solid #f1f1f1;
+    border-radius: .3rem;
 }
