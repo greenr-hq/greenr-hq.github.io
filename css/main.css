@@ -2,6 +2,8 @@ body {
     background-color: rgb(32, 33, 36);
     color: rgb(232, 234, 237);
     font-family: 'Josefin Sans', sans-serif;
+    margin: auto;
+    width: 50%;
 }
 
 #pre {
@@ -21,6 +23,9 @@ h2 {
 #title {
     margin-bottom: 0px;
     font-weight: 700;
+}
+
+.green {
     color: rgb(50, 168, 82);
 }
 

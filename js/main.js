@@ -306,7 +306,7 @@ function delete_cookie(name) {
 
 function start(){
 
-    if(!readCookie){
+    if(document.cookie.match(new RegExp(name + '=([^;]+)'))){
 
         writeCookie('plants', [])
     }
