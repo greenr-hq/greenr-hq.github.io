@@ -4,6 +4,8 @@ body {
     font-family: 'Josefin Sans', sans-serif;
     margin: auto;
     width: 50%;
+    overflow: hidden;
+    position: fixed;
 }
 
 #pre {
@@ -42,6 +44,7 @@ h2 {
     transition: visibility 0.2s linear, opacity 0.2s linear;
     margin: 10px;
     user-select: none;
+    overflow: auto;
 }
 
 #edit {
