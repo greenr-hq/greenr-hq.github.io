@@ -288,12 +288,23 @@ function goHome(){
 
 function load(){
     plants = readCookie('plants');
-    document.getElementById('information').innerHTML = plants.length + 'st';
+    updateInformation();
 }
 
 function save(){
     writeCookie('plants', plants);
-    document.getElementById('information').innerHTML = plants.length + 'st';
+    updateInformation();
+}
+
+function updateInformation(){
+
+    var size = plants.length;
+
+    if(size == 0){
+        document.getElementById('information').innerHTML = 'Inga växter';
+    } else {
+        document.getElementById('information').innerHTML = size + ' styck';
+    }
 }
 
 function writeCookie(name, value) {
