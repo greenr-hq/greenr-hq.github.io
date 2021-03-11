@@ -288,10 +288,12 @@ function goHome(){
 
 function load(){
     plants = readCookie('plants');
+    document.getElementById('information').innerHTML = plants.length + 'st';
 }
 
 function save(){
     writeCookie('plants', plants);
+    document.getElementById('information').innerHTML = plants.length + 'st';
 }
 
 function writeCookie(name, value) {

@@ -39,6 +39,13 @@ h2 {
     margin-left: 10px;
 }
 
+#information {
+    float: right;
+    padding: 10px;
+    height: 24px;
+    line-height: 24px;
+}
+
 #plants {
     transition: visibility 0.2s linear, opacity 0.2s linear;
     margin: 10px;
