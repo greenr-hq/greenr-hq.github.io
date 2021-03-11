@@ -1,0 +1,180 @@
+body {
+    background-color: rgb(32, 33, 36);
+    color: rgb(232, 234, 237);
+    font-family: 'Josefin Sans', sans-serif;
+}
+
+#pre {
+    margin-top: 50px;
+    text-align: center;
+    user-select: none;
+}
+
+h1 {
+    font-size: 48px;
+}
+
+h2 {
+    font-size: 28px;
+}
+
+#title {
+    margin-bottom: 0px;
+    font-weight: 700;
+    color: rgb(50, 168, 82);
+}
+
+#subtitle {
+    margin-top: 5px;
+    font-weight: 400;
+}
+
+#menu {
+    margin-left: 10px;
+}
+
+#plants {
+    transition: visibility 0.2s linear, opacity 0.2s linear;
+    margin: 10px;
+    user-select: none;
+}
+
+#edit {
+    transition: visibility 0.2s linear, opacity 0.2s linear;
+    margin: 10px
+}
+
+.plant {
+    transition: all 0.2s linear;
+    margin-top: 5px;
+    height: 50px;
+    background-color: rgb(61, 62, 65);
+    cursor: pointer;
+}
+
+.plant:hover {
+    background-color: rgb(65, 66, 70);
+}
+
+.plant.selected {
+    background-color: rgb(89, 90, 95);
+}
+
+.plant.selected:hover {
+    background-color: rgb(96, 94, 102);
+}
+
+
+.plant-name {
+    display: inline;
+    font-weight: 200;
+    line-height: 50px;
+    margin: 0 0 0 20px;
+}
+
+.room-name {
+    line-height: 50px;
+    float: right;
+    font-weight: 200;
+    display: inline;
+    margin: 0 20px 0 0;
+}
+
+.status {
+    height: 50px;
+    width: 10px;
+    float: left;
+}
+
+.ok {
+    background-color: rgb(50, 168, 82);
+}
+
+.warning {
+    background-color: rgb(168, 166, 50);
+}
+
+.danger {
+    background-color: rgb(168, 50, 50);
+}
+
+.material-icons {
+    cursor: pointer;
+    user-select: none;
+    padding: 10px;
+    transition: all 0.2s linear;
+    color: rgb(61, 62, 65);
+}
+
+.material-icons.material-icons-available {
+    color: rgb(232, 234, 237);
+}
+
+#done-icon.material-icons.material-icons-available {
+    color: rgb(50, 168, 82);
+}
+
+.material-icons.material-icons-available:hover {
+    color: rgb(160, 164, 170);
+}
+
+#done-icon.material-icons.material-icons-available:hover {
+    color: rgb(33, 112, 54);
+}
+
+.hide {
+    opacity: 0;
+    height: 0;
+    width: 0;
+    max-height: 0;
+    max-width: 0;
+    margin: 0 !important;
+    padding: 0;
+    visibility: hidden;
+    overflow: hidden;
+}
+
+input {
+    transition: all 0.2s linear;
+    display: block;
+    margin-top: 5px;
+    height: 50px;
+    max-height: 50px;
+    width: 100%;
+    font-size: 28px;
+    border: 0;
+    background-color: rgb(61, 62, 65);
+    color: rgb(232, 234, 237);
+    font-family: 'Josefin Sans', sans-serif;
+    box-sizing: border-box;
+    padding-left: 30px;
+    font-weight: 200;
+    line-height: 50px;
+}
+
+input:hover {
+    background-color: rgb(65, 66, 70);
+}
+
+input:focus {
+    outline: 0;
+    background-color: rgb(89, 90, 95);
+}
+
+input:focus:hover {
+    outline: 0;
+    background-color: rgb(96, 94, 102);
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+    /* display: none; <- Crashes Chrome on hover */
+    -webkit-appearance: none;
+    margin: 0; /* <-- Apparently some margin are still there even though it's hidden */
+}
+
+input[type="date"]::-webkit-inner-spin-button,
+input[type="date"]::-webkit-calendar-picker-indicator {
+    display: none;
+    -webkit-appearance: none;
+}
