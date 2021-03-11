@@ -273,6 +273,11 @@ function goHome(){
     document.getElementById('edit').classList.add('hide');
     document.getElementById('add-icon').classList.add('material-icons-available');
 
+    document.getElementById('name').value = '';
+    document.getElementById('location').value = '';
+    document.getElementById('last-time-watered').value = '';
+    document.getElementById('watering-interval').value = '';
+
     if(hasSelected){
         document.querySelectorAll(".select-only").forEach(element => element.classList.add('material-icons-available'));
 
@@ -306,7 +311,7 @@ function delete_cookie(name) {
 
 function start(){
 
-    if(document.cookie.match(new RegExp(name + '=([^;]+)'))){
+    if(!document.cookie.match(new RegExp(name + '=([^;]+)'))){
 
         writeCookie('plants', [])
     }
