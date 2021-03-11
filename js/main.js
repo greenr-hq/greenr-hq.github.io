@@ -287,13 +287,13 @@ function goHome(){
 }
 
 function load(){
-    plants = readCookie('plants');
     updateInformation();
+    plants = readCookie('plants');
 }
 
 function save(){
-    writeCookie('plants', plants);
     updateInformation();
+    writeCookie('plants', plants);
 }
 
 function updateInformation(){
@@ -303,7 +303,7 @@ function updateInformation(){
     if(size == 0){
         document.getElementById('information').innerHTML = 'Inga växter';
     } else {
-        document.getElementById('information').innerHTML = size + ' styck';
+        document.getElementById('information').innerHTML = size + ' st';
     }
 }
 
