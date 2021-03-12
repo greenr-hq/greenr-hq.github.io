@@ -304,7 +304,7 @@ function loadPlants(){
 
 function addPlant(data){
 
-    writePlant(plants.length, data);
+    writePlant(plants.length-1, data);
 
     updateInformation();
 }
