@@ -1,3 +1,5 @@
+var plants = [];
+
 var hasSelected = false;
 var isHome = true;
 var selectedId = -1;
@@ -116,8 +118,8 @@ function getStatusByPlant(plant){
 
 function remove(){
     if(hasSelected){
+        removePlant(plants[selectedId]);
         plants.splice(selectedId, 1)
-        save();
         hasSelected = false;
         updateMenu();
         renderList();
@@ -128,7 +130,7 @@ function water(){
     if(hasSelected){
         if(getStatus(selectedId) != 0){
             plants[selectedId].last_time_watered = new Date().toISOString().split('T')[0];
-            save();
+            editPlant(plants[selectedId]);
             hasSelected = false;
             updateMenu();
             renderList();
@@ -183,7 +185,7 @@ function add(){
             document.getElementById('last-time-watered').value = '';
             document.getElementById('watering-interval').value = '';
 
-            save();
+            addPlant(plants[plants.length-1]);
 
             hasSelected = false;
             updateMenu();
@@ -237,7 +239,7 @@ function edit(){
             document.getElementById('last-time-watered').value = '';
             document.getElementById('watering-interval').value = '';
 
-            save();
+            editPlant(plants[selectedId]);
 
             hasSelected = false;
             updateMenu();
@@ -286,13 +288,42 @@ function goHome(){
     }
 }
 
-function load(){
-    plants = readCookie('plants');
+function loadPlants(){
+
+    for(var id = 0; id < 150; id++){
+        
+        if(readPlant(id) == null){
+            break;
+        }
+
+        plants.push(readPlant(id));
+    }
+
     updateInformation();
 }
 
-function save(){
-    writeCookie('plants', plants);
+function addPlant(data){
+
+    writePlant(plants.length, data);
+
+    updateInformation();
+}
+
+function editPlant(data){
+
+    var id = plants.indexOf(data);
+
+    writePlant(id, data);
+
+    updateInformation();
+}
+
+function removePlant(data){
+
+    var id = plants.indexOf(data);
+
+    writePlant(id, "");
+
     updateInformation();
 }
 
@@ -307,13 +338,12 @@ function updateInformation(){
     }
 }
 
-function writeCookie(name, value) {
-    var cookie = [name, '=', JSON.stringify(value), '; domain=.', window.location.host.toString(), '; path=/;'].join('');
-    document.cookie = cookie;
+function writePlant(id, data) {
+    document.cookie = "plant-" + id +"=" + JSON.stringify(data) + "; expires=Thu, 01 Jan 2100 00:00:00 UTC; path=/";
 }
 
-function readCookie(name) {
-    var result = document.cookie.match(new RegExp(name + '=([^;]+)'));
+function readPlant(id) {
+    var result = document.cookie.match(new RegExp("plant-" + id + '=([^;]+)'));
     result && (result = JSON.parse(result[1]));
     return result;
 }
@@ -324,11 +354,6 @@ function delete_cookie(name) {
 
 function start(){
 
-    if(!document.cookie.match(new RegExp(name + '=([^;]+)'))){
-
-        writeCookie('plants', [])
-    }
-
-    load();
+    loadPlants();
     renderList();
 }
