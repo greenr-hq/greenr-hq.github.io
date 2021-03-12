@@ -322,7 +322,7 @@ function removePlant(data){
 
     var id = plants.indexOf(data);
 
-    writePlant(id, "");
+    document.cookie = "plant-" + id +"=" + JSON.stringify(data) + "; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/";
 
     updateInformation();
 }
