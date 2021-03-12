@@ -303,7 +303,17 @@ function loadPlants(){
 
 function addPlant(data){
 
-    writePlant(plants.length-1, data);
+    var availableId = 0;
+
+    for(var id = 0; id < 150; id++){
+        
+        if(readPlant(id) == null){
+
+            availableId = id;
+        }
+    }
+
+    writePlant(availableId, data);
 
     updateInformation();
 }
