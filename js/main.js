@@ -292,11 +292,10 @@ function loadPlants(){
 
     for(var id = 0; id < 150; id++){
         
-        if(readPlant(id) == null){
-            break;
-        }
+        if(readPlant(id) != null){
 
-        plants.push(readPlant(id));
+            plants.push(readPlant(id));
+        }
     }
 
     updateInformation();
