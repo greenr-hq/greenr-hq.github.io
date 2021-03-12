@@ -321,7 +321,7 @@ function removePlant(data){
 
     var id = plants.indexOf(data);
 
-    document.cookie = "plant-" + id +"; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/";
+    document.cookie = "plant-" + id +"=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/";
 
     updateInformation();
 }
