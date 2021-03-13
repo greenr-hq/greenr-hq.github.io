@@ -173,6 +173,7 @@ function add(){
 
             plants.push(
                 {
+                    id: generatePlantId(),
                     name: document.getElementById('name').value,
                     location: document.getElementById('location').value,
                     last_time_watered: document.getElementById('last-time-watered').value,
@@ -228,6 +229,7 @@ function edit(){
 
             plants[selectedId] =
                 {
+                    id: plants[selectedId].id,
                     name: document.getElementById('name').value,
                     location: document.getElementById('location').value,
                     last_time_watered: document.getElementById('last-time-watered').value,
@@ -301,37 +303,39 @@ function loadPlants(){
     updateInformation();
 }
 
-function addPlant(data){
+function generatePlantId(){
 
-    var availableId = 0;
+    var listOfIds = [];
+
+    plants.forEach((plant) => {
+        listOfIds.push(plant.id);
+    })
 
     for(var id = 0; id < 150; id++){
-        
-        if(readPlant(id) == null){
 
-            availableId = id;
+        if(!listOfIds.includes(id)){
+            return id;
         }
     }
+}
 
-    writePlant(availableId, data);
+function addPlant(plant){
+
+    writePlant(plant.id, plant);
 
     updateInformation();
 }
 
-function editPlant(data){
+function editPlant(plant){
 
-    var id = plants.indexOf(data);
-
-    writePlant(id, data);
+    writePlant(plant.id, plant);
 
     updateInformation();
 }
 
-function removePlant(data){
+function removePlant(plant){
 
-    var id = plants.indexOf(data);
-
-    document.cookie = "plant-" + id +"=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/";
+    document.cookie = "plant-" + plant.id +"=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/";
 
     updateInformation();
 }
