@@ -121,6 +121,7 @@ function remove(){
         removePlant(plants[selectedId]);
         plants.splice(selectedId, 1)
         hasSelected = false;
+        updateInformation();
         updateMenu();
         renderList();
     }
@@ -166,6 +167,7 @@ function add(){
         document.getElementById('back-icon').classList.remove('hide');
         document.getElementById('edit').classList.remove('hide');
         document.getElementById('add-icon').classList.remove('material-icons-available');
+        document.getElementById('information').classList.add('hide');
 
     } else {
 
@@ -189,6 +191,7 @@ function add(){
             addPlant(plants[plants.length-1]);
 
             hasSelected = false;
+            updateInformation();
             updateMenu();
             renderList();
 
@@ -212,6 +215,7 @@ function edit(){
             document.getElementById('refresh-icon').classList.add('hide');
             document.getElementById('back-icon').classList.remove('hide');
             document.getElementById('edit').classList.remove('hide');
+            document.getElementById('information').classList.add('hide');
 
 
             var plant = plants[selectedId];
@@ -276,6 +280,7 @@ function goHome(){
     document.getElementById('back-icon').classList.add('hide');
     document.getElementById('edit').classList.add('hide');
     document.getElementById('add-icon').classList.add('material-icons-available');
+    document.getElementById('information').classList.remove('hide');
 
     document.getElementById('name').value = '';
     document.getElementById('location').value = '';
@@ -322,22 +327,16 @@ function generatePlantId(){
 function addPlant(plant){
 
     writePlant(plant.id, plant);
-
-    updateInformation();
 }
 
 function editPlant(plant){
 
     writePlant(plant.id, plant);
-
-    updateInformation();
 }
 
 function removePlant(plant){
 
     document.cookie = "plant-" + plant.id +"=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/";
-
-    updateInformation();
 }
 
 function updateInformation(){
