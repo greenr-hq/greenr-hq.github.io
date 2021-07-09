@@ -108,7 +108,7 @@ h2 {
 }
 
 .warning {
-    background-color: rgb(168, 166, 50);
+    background-color: rgb(211, 208, 66);
 }
 
 .danger {
@@ -121,7 +121,7 @@ span#green {
 }
 
 span#yellow {
-    color: rgb(168, 166, 50);
+    color: rgb(211, 208, 66);
     font-weight: 700;
 }
 
