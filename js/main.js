@@ -7,6 +7,7 @@ var selectedId = -1;
 
 function renderList(delay = 0){
 
+    plants = [];
     document.getElementById('plants').innerHTML = "";
 
     var id = 0;
@@ -145,16 +146,30 @@ function water(){
 }
 
 function seeNextDay(){
-    hasSelected = false;
-    loadPlants();
-    updateMenu();
-    renderList(1);
+    if(isInFuture){
+        hasSelected = false;
+        isInFuture = false;
+        loadPlants();
+        updateMenu();
+        updateInformation();
+        renderList(0);
+        document.getElementById('see-next-day-icon').innerHTML = 'update';
+    } else {
+        hasSelected = false;
+        isInFuture = true;
+        loadPlants();
+        updateMenu();
+        updateInformation();
+        renderList(1);
+        document.getElementById('see-next-day-icon').innerHTML = 'history';
+    }
 }
 
 function refresh(){
     hasSelected = false;
     loadPlants();
     updateMenu();
+    updateInformation();
     renderList();
 }
 
@@ -355,10 +370,14 @@ function updateInformation(){
 
     var size = plants.length;
 
-    if(size == 0){
-        document.getElementById('information').innerHTML = 'Inga växter';
+    if(isInFuture){
+        document.getElementById('information').innerHTML = 'Visar imorgon';
     } else {
-        document.getElementById('information').innerHTML = size + ' st';
+        if(size == 0){
+            document.getElementById('information').innerHTML = 'Inga växter';
+        } else {
+            document.getElementById('information').innerHTML = size + ' st';
+        }
     }
 }
 
