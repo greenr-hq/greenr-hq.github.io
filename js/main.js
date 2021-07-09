@@ -137,9 +137,9 @@ function remove(){
         removePlant(plants[selectedId]);
         plants.splice(selectedId, 1)
         hasSelected = false;
-        updateInformation();
         updateMenu();
         renderList();
+        updateInformation();
     }
 }
 
@@ -179,8 +179,8 @@ function refresh(){
     hasSelected = false;
     loadPlants();
     updateMenu();
-    updateInformation();
     renderList();
+    updateInformation();
 }
 
 function areInputsFilled(){
@@ -229,9 +229,9 @@ function add(){
             addPlant(plants[plants.length-1]);
 
             hasSelected = false;
-            updateInformation();
             updateMenu();
             renderList();
+            updateInformation();
 
             goHome();
         }
@@ -415,4 +415,5 @@ function start(){
 
     loadPlants();
     renderList();
+    updateInformation();
 }
