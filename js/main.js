@@ -1,16 +1,17 @@
 var plants = [];
 
 var hasSelected = false;
+var isInFuture = false;
 var isHome = true;
 var selectedId = -1;
 
-function renderList(){
+function renderList(delay = 0){
 
     document.getElementById('plants').innerHTML = "";
 
     var id = 0;
 
-    plants.sort((a, b) => { return getStatusByPlant(b) - getStatusByPlant(a)});
+    plants.sort((a, b) => { return getStatusByPlant(b, delay) - getStatusByPlant(a, delay)});
 
     plants.forEach(plant => {
         
@@ -18,9 +19,9 @@ function renderList(){
 
         var status = '';
 
-        if(getStatus(id) == 0){
+        if(getStatus(id, delay) == 0){
             status = 'ok';
-        } else if(getStatus(id) == 1){
+        } else if(getStatus(id, delay) == 1){
             status = 'warning';
         } else {
             status = 'danger';
@@ -71,25 +72,29 @@ function unselectAll(){
 }
 
 function updateMenu(){
-    if(hasSelected){
-        document.querySelectorAll(".select-only").forEach(element => element.classList.add('material-icons-available'));
-
-        if(getStatus(selectedId) == 0){
-            document.querySelectorAll(".needs-water-only").forEach(element => element.classList.remove('material-icons-available'));
-        }
-    } else {
+    if(isInFuture){
         document.querySelectorAll(".select-only").forEach(element => element.classList.remove('material-icons-available'));
+    } else {
+        if(hasSelected){
+            document.querySelectorAll(".select-only").forEach(element => element.classList.add('material-icons-available'));
+
+            if(getStatus(selectedId) == 0){
+                document.querySelectorAll(".needs-water-only").forEach(element => element.classList.remove('material-icons-available'));
+            }
+        } else {
+            document.querySelectorAll(".select-only").forEach(element => element.classList.remove('material-icons-available'));
+        }
     }
 }
 
-function getStatus(id){
+function getStatus(id, delay){
 
     var plant = plants[id];
 
     var now = new Date();
     var watered = new Date(Date.parse(plant.last_time_watered));
 
-    var since_watering = Math.floor((now - watered) / (1000*60*60*24));
+    var since_watering = Math.floor((now - watered) / (1000*60*60*24)) + delay;
 
     if(since_watering < plant.watering_interval){
         return 0;
@@ -100,12 +105,12 @@ function getStatus(id){
     }
 }
 
-function getStatusByPlant(plant){
+function getStatusByPlant(plant, delay){
 
     var now = new Date();
     var watered = new Date(Date.parse(plant.last_time_watered));
 
-    var since_watering = Math.floor((now - watered) / (1000*60*60*24));
+    var since_watering = Math.floor((now - watered) / (1000*60*60*24)) + delay;
 
     if(since_watering < plant.watering_interval){
         return 0;
@@ -139,9 +144,16 @@ function water(){
     }
 }
 
+function seeNextDay(){
+    hasSelected = false;
+    loadPlants();
+    updateMenu();
+    renderList(1);
+}
+
 function refresh(){
     hasSelected = false;
-    load();
+    loadPlants();
     updateMenu();
     renderList();
 }

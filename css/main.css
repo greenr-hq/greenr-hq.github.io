@@ -127,16 +127,8 @@ h2 {
     color: rgb(232, 234, 237);
 }
 
-#done-icon.material-icons.material-icons-available {
-    color: rgb(50, 168, 82);
-}
-
 .material-icons.material-icons-available:hover {
     color: rgb(160, 164, 170);
-}
-
-#done-icon.material-icons.material-icons-available:hover {
-    color: rgb(33, 112, 54);
 }
 
 .hide {
