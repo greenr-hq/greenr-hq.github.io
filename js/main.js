@@ -15,7 +15,9 @@ function renderList(delay = 0){
     document.getElementById('plants').innerHTML = "";
 
     var id = 0;
-    red, yellow, green = 0;
+    red = 0;
+    yellow = 0;
+    green = 0;
 
     plants.sort((a, b) => { return getStatusByPlant(b, delay) - getStatusByPlant(a, delay)});
 
