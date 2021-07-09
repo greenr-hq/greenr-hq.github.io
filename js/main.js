@@ -3,6 +3,11 @@ var plants = [];
 var hasSelected = false;
 var isInFuture = false;
 var isHome = true;
+
+var red = 0;
+var yellow = 0;
+var green = 0;
+
 var selectedId = -1;
 
 function renderList(delay = 0){
@@ -10,6 +15,7 @@ function renderList(delay = 0){
     document.getElementById('plants').innerHTML = "";
 
     var id = 0;
+    red, yellow, green = 0;
 
     plants.sort((a, b) => { return getStatusByPlant(b, delay) - getStatusByPlant(a, delay)});
 
@@ -21,10 +27,13 @@ function renderList(delay = 0){
 
         if(getStatus(id, delay) == 0){
             status = 'ok';
+            green++;
         } else if(getStatus(id, delay) == 1){
             status = 'warning';
+            yellow++;
         } else {
             status = 'danger';
+            red++;
         }
 
         plantElement.id = 'plant-id-' + id;
@@ -189,6 +198,7 @@ function add(){
         document.getElementById('done-icon').classList.add('hide');
         document.getElementById('edit-icon').classList.add('hide');
         document.getElementById('delete-icon').classList.add('hide');
+        document.getElementById('see-next-day-icon').classList.add('hide');
         document.getElementById('refresh-icon').classList.add('hide');
         document.getElementById('back-icon').classList.remove('hide');
         document.getElementById('edit').classList.remove('hide');
@@ -238,6 +248,7 @@ function edit(){
             document.getElementById('add-icon').classList.add('hide');
             document.getElementById('done-icon').classList.add('hide');
             document.getElementById('delete-icon').classList.add('hide');
+            document.getElementById('see-next-day-icon').classList.add('hide');
             document.getElementById('refresh-icon').classList.add('hide');
             document.getElementById('back-icon').classList.remove('hide');
             document.getElementById('edit').classList.remove('hide');
@@ -302,6 +313,7 @@ function goHome(){
     document.getElementById('done-icon').classList.remove('hide');
     document.getElementById('edit-icon').classList.remove('hide');
     document.getElementById('delete-icon').classList.remove('hide');
+    document.getElementById('see-next-day-icon').classList.remove('hide');
     document.getElementById('refresh-icon').classList.remove('hide');
     document.getElementById('back-icon').classList.add('hide');
     document.getElementById('edit').classList.add('hide');
@@ -372,14 +384,15 @@ function updateInformation(){
     var size = plants.length;
 
     if(isInFuture){
-        document.getElementById('information').innerHTML = 'Visar imorgon';
+        document.getElementById('day').innerHTML = 'Imorgon';
     } else {
-        if(size == 0){
-            document.getElementById('information').innerHTML = 'Inga växter';
-        } else {
-            document.getElementById('information').innerHTML = size + ' st';
-        }
+        document.getElementById('day').innerHTML = 'Idag';
     }
+
+    document.getElementById('red').innerHTML = red;
+    document.getElementById('yellow').innerHTML = yellow;
+    document.getElementById('green').innerHTML = green;
+
 }
 
 function writePlant(id, data) {
