@@ -117,14 +117,17 @@ h2 {
 
 span#green {
     color: rgb(50, 168, 82);
+    font-weight: 700;
 }
 
 span#yellow {
     color: rgb(168, 166, 50);
+    font-weight: 700;
 }
 
 span#red {
     color: rgb(168, 50, 50);
+    font-weight: 700;
 }
 
 .material-icons {

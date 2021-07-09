@@ -84,7 +84,7 @@ function unselectAll(){
 
 function updateMenu(){
     if(isInFuture){
-        //
+        document.querySelectorAll(".select-only").forEach(element => element.classList.remove('material-icons-available'));
     } else {
         if(hasSelected){
             document.querySelectorAll(".select-only").forEach(element => element.classList.add('material-icons-available'));
@@ -171,7 +171,7 @@ function seeNextDay(){
         updateMenu();
         renderList(1);
         updateInformation();
-        document.getElementById('see-next-day-icon').innerHTML = 'update disabled';
+        document.getElementById('see-next-day-icon').innerHTML = 'update_disabled';
     }
 }
 
