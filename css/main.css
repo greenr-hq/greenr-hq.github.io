@@ -115,15 +115,15 @@ h2 {
     background-color: rgb(168, 50, 50);
 }
 
-#green {
+span#green {
     color: rgb(50, 168, 82);
 }
 
-#yellow {
+span#yellow {
     color: rgb(168, 166, 50);
 }
 
-#red {
+span#red {
     color: rgb(168, 50, 50);
 }
 

@@ -84,7 +84,7 @@ function unselectAll(){
 
 function updateMenu(){
     if(isInFuture){
-        document.querySelectorAll(".select-only").forEach(element => element.classList.remove('material-icons-available'));
+        //
     } else {
         if(hasSelected){
             document.querySelectorAll(".select-only").forEach(element => element.classList.add('material-icons-available'));
