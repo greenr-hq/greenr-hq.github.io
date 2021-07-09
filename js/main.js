@@ -169,7 +169,7 @@ function seeNextDay(){
         updateMenu();
         updateInformation();
         renderList(1);
-        document.getElementById('see-next-day-icon').innerHTML = 'history';
+        document.getElementById('see-next-day-icon').innerHTML = 'update disabled';
     }
 }
 
