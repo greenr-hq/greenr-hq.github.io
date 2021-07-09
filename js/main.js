@@ -57,6 +57,11 @@ function pick(id){
 
     unselectAll();
 
+    if(isInFuture)
+    {
+        return;
+    }
+
     if(hasSelected == false){
 
         hasSelected = true;
