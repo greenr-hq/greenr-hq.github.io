@@ -7,7 +7,6 @@ var selectedId = -1;
 
 function renderList(delay = 0){
 
-    plants = [];
     document.getElementById('plants').innerHTML = "";
 
     var id = 0;
@@ -323,6 +322,8 @@ function goHome(){
 }
 
 function loadPlants(){
+
+    plants = [];
 
     for(var id = 0; id < 150; id++){
         
