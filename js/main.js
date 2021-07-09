@@ -159,16 +159,16 @@ function seeNextDay(){
         isInFuture = false;
         loadPlants();
         updateMenu();
-        updateInformation();
         renderList(0);
+        updateInformation();
         document.getElementById('see-next-day-icon').innerHTML = 'update';
     } else {
         hasSelected = false;
         isInFuture = true;
         loadPlants();
         updateMenu();
-        updateInformation();
         renderList(1);
+        updateInformation();
         document.getElementById('see-next-day-icon').innerHTML = 'update disabled';
     }
 }
