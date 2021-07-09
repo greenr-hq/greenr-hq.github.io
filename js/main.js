@@ -161,7 +161,7 @@ function seeNextDay(){
         isInFuture = false;
         loadPlants();
         updateMenu();
-        renderList(0);
+        renderList();
         updateInformation();
         document.getElementById('see-next-day-icon').innerHTML = 'update';
     } else {
@@ -346,8 +346,6 @@ function loadPlants(){
             plants.push(readPlant(id));
         }
     }
-
-    updateInformation();
 }
 
 function generatePlantId(){

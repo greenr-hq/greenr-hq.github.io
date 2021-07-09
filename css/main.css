@@ -47,10 +47,6 @@ h2 {
     margin-right: 20px;
 }
 
-#red, #yellow, #green {
-    margin-right: 10px;
-}
-
 #plants {
     transition: visibility 0.2s linear, opacity 0.2s linear;
     margin: 10px;
@@ -119,15 +115,15 @@ h2 {
     background-color: rgb(168, 50, 50);
 }
 
-#green.ok {
+#green {
     color: rgb(50, 168, 82);
 }
 
-#yellow.warning {
+#yellow {
     color: rgb(168, 166, 50);
 }
 
-#red.danger {
+#red {
     color: rgb(168, 50, 50);
 }
 
