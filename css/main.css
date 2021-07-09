@@ -119,6 +119,18 @@ h2 {
     background-color: rgb(168, 50, 50);
 }
 
+#green.ok {
+    color: rgb(50, 168, 82);
+}
+
+#yellow.warning {
+    color: rgb(168, 166, 50);
+}
+
+#red.danger {
+    color: rgb(168, 50, 50);
+}
+
 .material-icons {
     cursor: pointer;
     user-select: none;
