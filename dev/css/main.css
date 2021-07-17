@@ -138,6 +138,10 @@ span#red {
     color: rgb(61, 62, 65);
 }
 
+.spacing {
+    margin-left: 20px;
+}
+
 .material-icons.material-icons-available {
     color: rgb(232, 234, 237);
 }

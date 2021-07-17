@@ -295,6 +295,7 @@ function edit(){
             hasSelected = false;
             updateMenu();
             renderList();
+            updateInformation();
 
             goHome();
         }
@@ -336,6 +337,9 @@ function goHome(){
     if(hasSelected){
         document.querySelectorAll(".select-only").forEach(element => element.classList.add('material-icons-available'));
 
+        if(getStatus(selectedId, 0) == 0){
+            document.querySelectorAll(".needs-water-only").forEach(element => element.classList.remove('material-icons-available'));
+        }
     } else {
         document.querySelectorAll(".select-only").forEach(element => element.classList.remove('material-icons-available'));
     }
