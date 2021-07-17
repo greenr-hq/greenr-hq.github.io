@@ -115,6 +115,12 @@ h2 {
     background-color: rgb(168, 50, 50);
 }
 
+.day {
+    background-color: rgb(61, 62, 65);
+    padding: 3px;
+    border-radius: 5px;
+}
+
 span#green {
     color: rgb(50, 168, 82);
     font-weight: 700;
