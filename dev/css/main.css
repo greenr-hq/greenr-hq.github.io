@@ -115,7 +115,7 @@ h2 {
     background-color: rgb(168, 50, 50);
 }
 
-.day {
+#day {
     background-color: rgb(61, 62, 65);
     padding: 3px;
     border-radius: 5px;
