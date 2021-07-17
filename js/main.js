@@ -156,6 +156,7 @@ function water(){
             hasSelected = false;
             updateMenu();
             renderList();
+            updateInformation();
         }
     }
 }

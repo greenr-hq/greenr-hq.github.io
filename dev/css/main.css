@@ -223,3 +223,7 @@ input[type="date"]::-webkit-calendar-picker-indicator {
     background: rgb(65, 66, 70);
     border: 5px solid rgb(32, 33, 36);
 }
+
+::selection, ::-moz-selection {
+    background: rgb(50, 168, 82);
+  }
