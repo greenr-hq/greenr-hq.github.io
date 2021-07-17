@@ -130,10 +130,6 @@ span#red {
     font-weight: 700;
 }
 
-.material-icons.blue {
-    color: rgb(44, 146, 214);
-}
-
 .material-icons {
     cursor: pointer;
     user-select: none;
@@ -148,6 +144,10 @@ span#red {
 
 .material-icons.material-icons-available {
     color: rgb(232, 234, 237);
+}
+
+.material-icons.material-icons-available.blue {
+    color: rgb(44, 146, 214);
 }
 
 .material-icons.material-icons-available:hover {
