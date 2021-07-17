@@ -394,9 +394,9 @@ function updateInformation(){
     var size = plants.length;
 
     if(isInFuture){
-        document.getElementById('day').innerHTML = 'Imorgon';
+        document.getElementById('day').innerHTML = 'Imorgon <span id="see-next-day-icon" class="material-icons material-icons-available" onclick="javascript:seeNextDay()">update</span></span>';
     } else {
-        document.getElementById('day').innerHTML = 'Idag';
+        document.getElementById('day').innerHTML = 'Idag <span id="see-next-day-icon" class="material-icons material-icons-available" onclick="javascript:seeNextDay()">update</span></span>';
     }
 
     document.getElementById('red').innerHTML = red;
