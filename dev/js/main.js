@@ -94,7 +94,7 @@ function updateMenu(){
         if(hasSelected){
             document.querySelectorAll(".select-only").forEach(element => element.classList.add('material-icons-available'));
 
-            if(getStatus(selectedId) == 0){
+            if(getStatus(selectedId, 0) == 0){
                 document.querySelectorAll(".needs-water-only").forEach(element => element.classList.remove('material-icons-available'));
             }
         } else {
