@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>greenr</title>
+    <meta http-equiv="Content-Security-Policy" content="script-src 'self' 'unsafe-inline';" />
+
+    <link rel="icon" type="image/x-icon" href="img/icon.ico" />
+
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@200;400;700&display=swap" rel="stylesheet">
+
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+    <link href="css/main.css" rel="stylesheet">
+</head>
+    <body>
+        <div id="pre">
+            <h1 id="title"><span class="green">green</span>r</h1>
+            <h3 id="subtitle">version 1.0.2 (dev) av Pim Kennedy</h3>
+        </div>
+
+        <div id="menu">
+            <span id="back-icon" class="material-icons material-icons-available hide" onclick="javascript:goHome()">keyboard_arrow_left</span>
+            <span id="add-icon" class="material-icons material-icons-available" onclick="javascript:add()">add</span>
+            <span id="done-icon" class="material-icons select-only needs-water-only" onclick="javascript:water()">done</span>
+            <span id="edit-icon" class="material-icons select-only" onclick="javascript:edit()">edit</span>
+            <span id="delete-icon" class="material-icons select-only" onclick="javascript:remove()">delete</span>
+            <span id="see-next-day-icon" class="material-icons material-icons-available" onclick="javascript:seeNextDay()">update</span>
+            <span id="refresh-icon" class="material-icons material-icons-available" onclick="javascript:refresh()">cached</span>
+            <span id="information"><span id="red"></span> <span id="yellow"></span> <span id="green"></span> • <span id="day"></span></span>
+        </div>
+
+        <div id="plants">
+        </div>
+
+        <div id="edit" class="hide">
+            <input type="text" id="name" placeholder="Namn" onkeyup='javascript:inputUpdated()'>
+            <input type="text" id="location" placeholder="Plats" onkeyup='javascript:inputUpdated()'>
+            <input type="date" id="last-time-watered" max="2999-12-31" onkeyup='javascript:inputUpdated()'>
+            <input type="number" id="watering-interval" placeholder="Bevattningsintervall (d)" onkeyup='javascript:inputUpdated()'>
+        </div>
+        
+    </body>
+
+    <script src="js/main.js"></script>
+    <script>start();</script>
+</html>
