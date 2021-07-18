@@ -233,7 +233,7 @@ option {
 }
 
 option:hover {
-    background-color: rgb(65, 66, 70);
+    box-shadow: 0 0 10px 100px rgb(65, 66, 70) inset;
 }
 
 option:focus {
