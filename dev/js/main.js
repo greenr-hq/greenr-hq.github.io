@@ -169,7 +169,6 @@ function seeNextDay(){
         updateMenu();
         renderList();
         updateInformation();
-        document.getElementById('see-next-day-icon').innerHTML = 'update';
     } else {
         hasSelected = false;
         isInFuture = true;
@@ -177,7 +176,6 @@ function seeNextDay(){
         updateMenu();
         renderList(1);
         updateInformation();
-        document.getElementById('see-next-day-icon').innerHTML = 'update_disabled';
     }
 }
 
@@ -206,7 +204,6 @@ function add(){
         document.getElementById('done-icon').classList.add('hide');
         document.getElementById('edit-icon').classList.add('hide');
         document.getElementById('delete-icon').classList.add('hide');
-        document.getElementById('see-next-day-icon').classList.add('hide');
         document.getElementById('refresh-icon').classList.add('hide');
         document.getElementById('back-icon').classList.remove('hide');
         document.getElementById('edit').classList.remove('hide');
@@ -256,7 +253,6 @@ function edit(){
             document.getElementById('add-icon').classList.add('hide');
             document.getElementById('done-icon').classList.add('hide');
             document.getElementById('delete-icon').classList.add('hide');
-            document.getElementById('see-next-day-icon').classList.add('hide');
             document.getElementById('refresh-icon').classList.add('hide');
             document.getElementById('back-icon').classList.remove('hide');
             document.getElementById('edit').classList.remove('hide');
@@ -322,7 +318,6 @@ function goHome(){
     document.getElementById('done-icon').classList.remove('hide');
     document.getElementById('edit-icon').classList.remove('hide');
     document.getElementById('delete-icon').classList.remove('hide');
-    document.getElementById('see-next-day-icon').classList.remove('hide');
     document.getElementById('refresh-icon').classList.remove('hide');
     document.getElementById('back-icon').classList.add('hide');
     document.getElementById('edit').classList.add('hide');
