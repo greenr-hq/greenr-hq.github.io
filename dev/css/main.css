@@ -279,6 +279,7 @@ option:focus:hover {
 
   .custom-select {
     position: relative;
+    display: inline-block;
   }
   
   .custom-select select {
@@ -299,7 +300,7 @@ option:focus:hover {
   .select-selected:after {
     position: absolute;
     content: "";
-    top: 14px;
+    top: 16px;
     right: 10px;
     width: 0;
     height: 0;
@@ -316,7 +317,7 @@ option:focus:hover {
   /*style the items (options), including the selected item:*/
   .select-items div,.select-selected {
     color: #ffffff;
-    padding: 8px 16px;
+    padding: 0px 4px;
     border: 1px solid transparent;
     border-color: transparent transparent rgba(0, 0, 0, 0.1) transparent;
     cursor: pointer;
