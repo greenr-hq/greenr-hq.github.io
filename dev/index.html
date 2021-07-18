@@ -31,7 +31,14 @@
             <span id="delete-icon" class="material-icons select-only" onclick="javascript:remove()">delete</span>
             <span id="advanced-watering" class="material-icons material-icons-available spacing" onclick="javascript:advancedWatering()">bar_chart</span>
             <span id="refresh-icon" class="material-icons material-icons-available" onclick="javascript:refresh()">cached</span>
-            <span id="information"><span id="red"></span> <span id="yellow"></span> <span id="green"></span><span id="time"> • Visar <select id="time-select"><option value="today">idag</option><option value="tomorrow">imorgon</option><option value="in2days">om 2 dagar</option><option value="in3days">om 3 dagar</option></select></span></span>
+            <span id="information"><span id="red"></span> <span id="yellow"></span> <span id="green"></span><span id="time"> • Visar <div class="custom-select" style="width:200px;">
+                <select>
+                  <option value="0">idag</option>
+                  <option value="1">imorgon</option>
+                  <option value="2">om 2 dagar</option>
+                  <option value="3">om 3 dagar</option>
+                </select>
+              </div></span></span>
 
         </div>
 
@@ -48,5 +55,6 @@
     </body>
 
     <script src="js/main.js"></script>
+    <script src="js/modules/dropdown.js"></script>
     <script>start();</script>
 </html>
