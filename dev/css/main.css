@@ -229,6 +229,20 @@ select {
     margin: 0;
 }
 
+select:hover {
+    background-color: rgb(65, 66, 70);
+}
+
+select:focus {
+    outline: 0;
+    background-color: rgb(89, 90, 95);
+}
+
+select:focus:hover {
+    outline: 0;
+    background-color: rgb(96, 94, 102);
+}
+
 ::-webkit-scrollbar {
     transition: all 0.2s linear;
     width: 20px;
