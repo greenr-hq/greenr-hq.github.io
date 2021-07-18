@@ -45,6 +45,7 @@ h2 {
     height: 24px;
     line-height: 24px;
     margin-right: 20px;
+    line-height: 17px;
 }
 
 #plants {
@@ -211,41 +212,6 @@ input[type="date"]::-webkit-calendar-picker-indicator {
     -webkit-appearance: none;
 }
 
-select {
-    transition: all 0.2s linear;
-    background-color: rgb(61, 62, 65);
-    padding: 5px;
-    border: 0;
-    border-radius: 5px;
-    color: rgb(232, 234, 237);
-    font-family: 'Josefin Sans', sans-serif;
-    height: 25px;
-    width: 110px;
-    margin: 0;
-}
-
-select:hover {
-    background-color: rgb(65, 66, 70);
-}
-
-option {
-    transition: all 0.2s linear;
-}
-
-option:hover {
-    box-shadow: 0 0 10px 100px rgb(65, 66, 70) inset;
-}
-
-option:focus {
-    outline: 0;
-    background-color: rgb(89, 90, 95);
-}
-
-option:focus:hover {
-    outline: 0;
-    background-color: rgb(96, 94, 102);
-}
-
 ::-webkit-scrollbar {
     transition: all 0.2s linear;
     width: 20px;
@@ -303,7 +269,7 @@ option:focus:hover {
   .select-selected:after {
     position: absolute;
     content: "";
-    top: 16px;
+    top: 12px;
     right: 10px;
     width: 0;
     height: 0;
@@ -339,6 +305,7 @@ option:focus:hover {
     left: 0;
     right: 0;
     z-index: 99;
+    line-height: 25px;
   }
   
   /*hide the items when the select box is closed:*/
@@ -347,5 +314,6 @@ option:focus:hover {
   }
   
   .select-items div:hover, .same-as-selected {
-    background-color: rgba(0, 0, 0, 0.1);
+    background-color: rgb(65, 66, 70);
+    border-radius: 5px;
   }
