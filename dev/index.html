@@ -31,15 +31,26 @@
             <span id="delete-icon" class="material-icons select-only" onclick="javascript:remove()">delete</span>
             <span id="advanced-watering" class="material-icons material-icons-available spacing" onclick="javascript:advancedWatering()">bar_chart</span>
             <span id="refresh-icon" class="material-icons material-icons-available" onclick="javascript:refresh()">cached</span>
-            <span id="information"><span id="red"></span> <span id="yellow"></span> <span id="green"></span><span id="time"> • Visar <div id="custom-select-time" class="custom-select">
-                <select>
-                  <option value="0">idag</option>
-                  <option value="1">idag</option>
-                  <option value="2">imorgon</option>
-                  <option value="3">i övermorgon</option>
-                </select>
-              </div></span></span>
-
+            <span id="information">
+                <span id="red">
+                    <span id="red-count"></span> <span class="material-icons">error_outline</span>
+                </span>
+                <span id="yellow">
+                    <span id="yellow-count"></span> <span class="material-icons">warning_amber</span>
+                </span>
+                <span id="all">
+                    <span id="all-count"></span>
+                </span>
+                <span id="time"> • Visar <div id="custom-select-time" class="custom-select">
+                        <select>
+                            <option value="0">idag</option>
+                            <option value="1">idag</option>
+                            <option value="2">imorgon</option>
+                            <option value="3">i övermorgon</option>
+                        </select>
+                    </div>
+                </span>
+            </span>
         </div>
 
         <div id="plants">

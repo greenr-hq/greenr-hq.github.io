@@ -116,9 +116,10 @@ h2 {
     background-color: rgb(168, 50, 50);
 }
 
-span#green {
+span#all {
     color: rgb(50, 168, 82);
     font-weight: 700;
+    margin-left: 5px;
 }
 
 span#yellow {
@@ -243,7 +244,7 @@ input[type="date"]::-webkit-calendar-picker-indicator {
 
 
 #custom-select-time {
-    width: 160px;
+    width: 130px;
     display: inline-block;
 }
 

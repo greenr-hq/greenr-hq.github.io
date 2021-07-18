@@ -6,7 +6,7 @@ var isHome = true;
 
 var red = 0;
 var yellow = 0;
-var green = 0;
+var all = 0;
 
 var selectedId = -1;
 
@@ -17,7 +17,7 @@ function renderList(delay = 0){
     var id = 0;
     red = 0;
     yellow = 0;
-    green = 0;
+    all = 0;
 
     plants.sort((a, b) => { return getStatusByPlant(b, delay) - getStatusByPlant(a, delay)});
 
@@ -29,7 +29,6 @@ function renderList(delay = 0){
 
         if(getStatus(id, delay) == 0){
             status = 'ok';
-            green++;
         } else if(getStatus(id, delay) == 1){
             status = 'warning';
             yellow++;
@@ -37,6 +36,8 @@ function renderList(delay = 0){
             status = 'danger';
             red++;
         }
+
+        all++;
 
         plantElement.id = 'plant-id-' + id;
         plantElement.className = 'plant';
@@ -388,9 +389,9 @@ function updateInformation(){
 
     var size = plants.length;
 
-    document.getElementById('red').innerHTML = red;
-    document.getElementById('yellow').innerHTML = yellow;
-    document.getElementById('green').innerHTML = green;
+    document.getElementById('red-count').innerHTML = red;
+    document.getElementById('yellow-count').innerHTML = yellow;
+    document.getElementById('all-count').innerHTML = all;
 
 }
 
