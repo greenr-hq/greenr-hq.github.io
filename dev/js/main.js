@@ -394,9 +394,9 @@ function updateInformation(){
     var size = plants.length;
 
     if(isInFuture){
-        document.getElementById('day').innerHTML = 'Imorgon';
+        document.getElementById('day').innerHTML = 'Imorgon <select id="time"><option value="volvo">Idag</option><option value="saab">Imorgon</option><option value="opel">+2 dagar</option><option value="audi">+3 dagar</option></select>';
     } else {
-        document.getElementById('day').innerHTML = 'Idag';
+        document.getElementById('day').innerHTML = 'Idag <select id="time"><option value="volvo">Idag</option><option value="saab">Imorgon</option><option value="opel">+2 dagar</option><option value="audi">+3 dagar</option></select>';
     }
 
     document.getElementById('red').innerHTML = red;
