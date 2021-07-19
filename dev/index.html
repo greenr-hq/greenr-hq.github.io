@@ -61,10 +61,21 @@
             <input type="date" id="last-time-watered" max="2999-12-31" onkeyup='javascript:inputUpdated()'>
             <input type="number" id="watering-interval" placeholder="Bevattningsintervall (d)" onkeyup='javascript:inputUpdated()'>
         </div>
+
+        <div id="myModal" class="modal">
+
+            <!-- Modal content -->
+            <div class="modal-content">
+              <span class="close">&times;</span>
+              <p>Some text in the Modal..</p>
+            </div>
+          
+          </div>
         
     </body>
 
     <script src="js/main.js"></script>
     <script src="js/modules/dropdown.js"></script>
+    <script src="js/modules/modal.js"></script>
     <script>start();</script>
 </html>

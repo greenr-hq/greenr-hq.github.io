@@ -435,4 +435,6 @@ function start(){
     loadPlants();
     renderList();
     updateInformation();
+
+    modal.style.display = "block";
 }
