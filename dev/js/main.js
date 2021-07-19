@@ -393,6 +393,16 @@ function updateInformation(){
     document.getElementById('yellow-count').innerHTML = yellow;
     document.getElementById('all-count').innerHTML = all;
 
+    if(red == 0 && yellow == 0){
+        document.getElementById('all').classList.remove('hide')
+        document.getElementById('yellow').classList.add('hide')
+        document.getElementById('red').classList.add('hide')
+    } else {
+        document.getElementById('all').classList.add('hide')
+        document.getElementById('yellow').classList.remove('hide')
+        document.getElementById('red').classList.remove('hide')
+    }
+
 }
 
 function writePlant(id, data) {

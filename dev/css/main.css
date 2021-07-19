@@ -132,6 +132,30 @@ span#red {
     font-weight: 700;
 }
 
+#amber-icon {
+    padding: 0;
+    font-size: 15px;
+    vertical-align: bottom;
+    margin: 0px 5px 9px -3px;
+    color: rgb(211, 208, 66);
+}
+
+#danger-icon {
+    padding: 0;
+    font-size: 15px;
+    vertical-align: bottom;
+    margin: 0px 5px 9px -3px;
+    color:  rgb(168, 50, 50);
+}
+
+#all-icon {
+    padding: 0;
+    font-size: 15px;
+    vertical-align: bottom;
+    margin: 0px 5px 9px -3px;
+    color: rgb(50, 168, 82);
+}
+
 .material-icons {
     cursor: pointer;
     user-select: none;
