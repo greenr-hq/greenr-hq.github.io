@@ -192,6 +192,19 @@ span#red {
     overflow: hidden;
 }
 
+.delete {
+    display: none;
+    opacity: 0;
+    height: 0;
+    width: 0;
+    max-height: 0;
+    max-width: 0;
+    margin: 0 !important;
+    padding: 0;
+    visibility: hidden;
+    overflow: hidden;
+}
+
 input {
     transition: all 0.2s linear;
     display: block;

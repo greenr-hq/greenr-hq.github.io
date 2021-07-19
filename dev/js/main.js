@@ -393,14 +393,20 @@ function updateInformation(){
     document.getElementById('yellow-count').innerHTML = yellow;
     document.getElementById('all-count').innerHTML = all;
 
+    document.getElementById('red').classList.add('delete')
+    document.getElementById('yellow').classList.add('delete')
+    document.getElementById('all').classList.add('delete')
+
+    if(red > 0){
+        document.getElementById('red').classList.remove('delete')
+    }
+
+    if(yellow > 0){
+        document.getElementById('yellow').classList.remove('delete')
+    }
+
     if(red == 0 && yellow == 0){
-        document.getElementById('all').classList.remove('hide')
-        document.getElementById('yellow').classList.add('hide')
-        document.getElementById('red').classList.add('hide')
-    } else {
-        document.getElementById('all').classList.add('hide')
-        document.getElementById('yellow').classList.remove('hide')
-        document.getElementById('red').classList.remove('hide')
+        document.getElementById('all').classList.remove('delete')
     }
 
 }
