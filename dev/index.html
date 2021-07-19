@@ -15,6 +15,23 @@
     <link href="css/main.css" rel="stylesheet">
 </head>
     <body>
+
+        <!-- Modal Background and Modal -->
+        <div id="modal-background">
+            <div id="modal">
+            <span id="close-btn">&times;</span>
+            <p>HOWDY FOLKS!</p>
+            <div class="buttons">
+                <button class="yes">
+                YES
+                </button>
+                <button class="no">
+                NO
+                </button>
+            </div>
+            </div>
+        </div>
+
         <div id="pre">
             <h1 id="title"><span class="green">green</span>r</h1>
             <h3 id="subtitle">version 1.0.2 (dev) av Pim Kennedy</h3>
@@ -61,16 +78,6 @@
             <input type="date" id="last-time-watered" max="2999-12-31" onkeyup='javascript:inputUpdated()'>
             <input type="number" id="watering-interval" placeholder="Bevattningsintervall (d)" onkeyup='javascript:inputUpdated()'>
         </div>
-
-        <div id="myModal" class="modal">
-
-            <!-- Modal content -->
-            <div class="modal-content">
-              <span class="close">&times;</span>
-              <p>Some text in the Modal..</p>
-            </div>
-          
-          </div>
         
     </body>
 
