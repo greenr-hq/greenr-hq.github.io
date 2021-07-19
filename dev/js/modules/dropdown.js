@@ -16,7 +16,7 @@ for (i = 0; i < l; i++) {
   for (j = 1; j < ll; j++) {
     /*for each option in the original select element,
     create a new DIV that will act as an option item:*/
-    c = selElmnt.cloneNode(true)
+    c = selElmnt.getElementsByTagName("option")[j].cloneNode(true)
     c.addEventListener("click", function(e) {
         /*when an item is clicked, update the original select box,
         and the selected item:*/
