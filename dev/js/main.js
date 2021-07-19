@@ -427,6 +427,7 @@ function delete_cookie(name) {
 
 function registerEvents(){
     document.querySelectorAll(".time-option").forEach(element => element.addEventListener("click", () => {
+        console.log(element.value)
         renderList(element.value);
         updateInformation();
     }));
