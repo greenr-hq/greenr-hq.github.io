@@ -425,17 +425,13 @@ function delete_cookie(name) {
     document.cookie = [name, '=; expires=Thu, 01-Jan-1970 00:00:01 GMT; path=/; domain=.', window.location.host.toString()].join('');
 }
 
-function registerEvents(){
-    document.querySelectorAll(".time-option").forEach(element => element.addEventListener("click", () => {
-        console.log(element.value)
-        renderList(element.value);
-        updateInformation();
-    }));
+function see(){
+    renderList(element.value);
+    updateInformation();
 }
 
 function start(){
 
-    registerEvents();
     loadPlants();
     renderList();
     updateInformation();
