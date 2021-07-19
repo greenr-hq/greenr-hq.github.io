@@ -17,8 +17,11 @@ for (i = 0; i < l; i++) {
     /*for each option in the original select element,
     create a new DIV that will act as an option item:*/
     c = document.createElement("DIV");
-    //c.innerHTML = selElmnt.options[j].innerHTML;
-    c.options = selElmnt.options[j];
+    c.innerHTML = selElmnt.options[j].innerHTML;
+    
+    selElmnt.attributes.forEach(({name, value}) =>
+    c.setAttribute(name, value)
+    );
     c.addEventListener("click", function(e) {
         /*when an item is clicked, update the original select box,
         and the selected item:*/
