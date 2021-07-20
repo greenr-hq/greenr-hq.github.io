@@ -436,5 +436,5 @@ function start(){
     renderList();
     updateInformation();
 
-    modalBackground.style.display = 'block';
+    modal.style.display = 'block';
 }
