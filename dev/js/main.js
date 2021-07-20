@@ -436,5 +436,13 @@ function start(){
     renderList();
     updateInformation();
 
-    openModal();
+    openModal(
+        'info',
+        'New update available',
+        [
+            '- Feature 1',
+            '- Feature 2',
+            '- Feature 3'
+        ]
+    );
 }
