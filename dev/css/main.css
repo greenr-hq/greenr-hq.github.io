@@ -394,6 +394,7 @@ option:hover, .same-as-selected {
 }
 
 .modal-content {
+    font-weight: 300;
     margin: 0;
 }
   
@@ -412,7 +413,8 @@ button:hover {
     background-color: rgb(96, 94, 102);
 }
   
-#close-btn {
+#close-button {
+    color: white;
     transition: all 0.5s linear;
     align-self: flex-end;
 }
