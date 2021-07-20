@@ -436,5 +436,5 @@ function start(){
     renderList();
     updateInformation();
 
-    modal.style.display = 'block';
+    openModal();
 }
