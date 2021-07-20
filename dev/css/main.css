@@ -346,7 +346,6 @@ input[type="date"]::-webkit-calendar-picker-indicator {
     line-height: 25px;
   }
   
-  /*hide the items when the select box is closed:*/
   .select-hide {
     display: none;
   }
@@ -407,28 +406,21 @@ button {
     margin-top: 35px;
     font-size: 1rem;
     border-radius: 8px;
-  }
+}
 
 button:hover {
     background-color: rgb(96, 94, 102);
-    border: none;
-    padding: 7px 14px;
-    font-size: 1rem;
-    border-radius: 5px;
-  }
+}
   
-  #close-btn {
+#close-btn {
     align-self: flex-end;
-  }
+}
   
-  #close-btn:hover {
+#close-btn:hover {
     cursor: pointer;
-    color: #ff0000;
-  }
-  
-  /* modal part end */
-  
-  /* animation part */
+    color: rgb(168, 50, 50);
+}
+
   @keyframes animatemodal {
     from {
       opacity: 0;
@@ -436,5 +428,4 @@ button:hover {
     to {
       opacity: 1;
     }
-  }
-  /* animation part end */
+}
