@@ -24,6 +24,15 @@ window.addEventListener('click', function(event) {
   }
 });
 
-function openModal(){
-  modal.classList.remove('hide');
+function openModal(icon, title, content){
+    document.getElementById('modal-title-icon').innerHTML = icon;
+    document.getElementById('modal-title').innerHTML = title;
+
+    content.array.forEach(element => {
+      var paragraph = document.createElement("p");
+      paragraph.innerHTML = element
+      document.getElementbyId('modal-content').appendChild(paragraph);
+    });
+    document.getElementById('modal-icon').innerHTML = icon;
+    modal.classList.remove('hide');
 }

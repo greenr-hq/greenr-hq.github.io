@@ -367,6 +367,7 @@ option:hover, .same-as-selected {
   }
   
   #modal {
+    transition: visibility 0.2s linear, opacity 0.2s linear;
     background-color: rgb(61, 62, 65);
     position: absolute;
     top: 50%;
@@ -391,7 +392,7 @@ option:hover, .same-as-selected {
     margin-top: 0;
 }
 
-.modal-content {
+.modal-content p {
     font-weight: 300;
     margin: 0;
 }
