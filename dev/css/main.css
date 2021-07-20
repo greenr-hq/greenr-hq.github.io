@@ -368,12 +368,12 @@ option:hover, .same-as-selected {
   }
   
   #modal {
-    background-color: #fff;
+    background-color: rgb(61, 62, 65);
     position: absolute;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    width: 200px;
+    width: 400px;
     padding: 10px 20px;
     border-radius: 5px;
     display: flex;
@@ -385,19 +385,12 @@ option:hover, .same-as-selected {
     animation-duration: 0.4s;
   }
   
-  .yes, .no {
+  button {
+    background-color: #00ff00;
     border: none;
     padding: 7px 14px;
     font-size: 1rem;
     border-radius: 5px;
-  }
-  
-  .yes {
-    background-color: #00ff00;
-  }
-  
-  .no {
-    background-color: #ff0000;
   }
   
   #close-btn {
