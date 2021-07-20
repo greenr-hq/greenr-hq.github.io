@@ -7,7 +7,12 @@ let doneBtn = document.getElementById('done-button');
 
 // hides the modal when the user clicks close-btn
 closeBtn.addEventListener('click', function() {
-  modal.style.display = 'none';
+
+  document.getElementById('modal').classList.add('close-modal')
+
+  setTimeout(() => {
+      modal.style.display = 'none';
+    }, 800);
 });
 
 doneBtn.addEventListener('click', function() {

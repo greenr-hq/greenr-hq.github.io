@@ -380,9 +380,14 @@ option:hover, .same-as-selected {
     align-items: center;
     box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
     font-size: 1.5rem;
-    animation-name: animatemodal;
+    animation-name: open_modal;
     animation-duration: 0.6s;
   }
+
+.close-modal#modal {
+    animation-name: close_modal;
+    animation-duration: 0.6s;
+}
 
 #modal-title-icon {
     color: white;
@@ -415,20 +420,29 @@ button:hover {
   
 #close-button {
     color: white;
-    transition: all 0.5s linear;
     align-self: flex-end;
+    transition: all 0.5s linear;
 }
   
-#close-btn:hover {
+#close-button:hover {
     cursor: pointer;
     color: rgb(168, 50, 50);
 }
 
-  @keyframes animatemodal {
+@keyframes open_modal {
     from {
       opacity: 0;
     }
     to {
       opacity: 1;
+    }
+}
+
+@keyframes close_modal {
+    from {
+      opacity: 1;
+    }
+    to {
+      opacity: 0;
     }
 }
