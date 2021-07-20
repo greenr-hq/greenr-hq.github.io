@@ -31,7 +31,7 @@ function openModal(icon, title, content){
     content.forEach(element => {
       var paragraph = document.createElement("p");
       paragraph.innerHTML = element
-      document.getElementbyId('modal-content').appendChild(paragraph);
+      document.getElementById('modal-content').appendChild(paragraph);
     });
     document.getElementById('modal-icon').innerHTML = icon;
     modal.classList.remove('hide');
