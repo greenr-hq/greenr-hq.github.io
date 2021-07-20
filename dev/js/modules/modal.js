@@ -28,7 +28,7 @@ function openModal(icon, title, content){
     document.getElementById('modal-title-icon').innerHTML = icon;
     document.getElementById('modal-title').innerHTML = title;
 
-    content.array.forEach(element => {
+    content.forEach(element => {
       var paragraph = document.createElement("p");
       paragraph.innerHTML = element
       document.getElementbyId('modal-content').appendChild(paragraph);
