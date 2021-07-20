@@ -33,6 +33,5 @@ function openModal(icon, title, content){
       paragraph.innerHTML = element
       document.getElementById('modal-content').appendChild(paragraph);
     });
-    document.getElementById('modal-icon').innerHTML = icon;
     modal.classList.remove('hide');
 }
