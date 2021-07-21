@@ -29,11 +29,19 @@ function openModal(title, subtitle, content){
     }
 
     document.getElementById('modal-content-container').innerHTML = '';
-    content.forEach(element => {
+
+    if(Array.isArray(content)){
+      content.forEach(element => {
+        var paragraph = document.createElement("p");
+        paragraph.innerHTML = '• ' + element
+        paragraph.classList.add('modal-content')
+        document.getElementById('modal-content-container').appendChild(paragraph);
+      });
+    } else {
       var paragraph = document.createElement("p");
-      paragraph.innerHTML = '• ' + element
+      paragraph.innerHTML = element
       paragraph.classList.add('modal-content')
       document.getElementById('modal-content-container').appendChild(paragraph);
-    });
+    }
     modal.classList.add('open-modal');
 }

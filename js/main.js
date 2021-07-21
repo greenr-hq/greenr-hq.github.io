@@ -63,7 +63,7 @@ function pick(id){
 
     if(isInFuture)
     {
-        openModal('Meddelande', {text: 'Växter kan ej ändras i framtiden'}, ['Ändra tidsreglaget till "idag" om du vill kunna ändra på växten.'])
+        openModal('Meddelande', {text: 'Växter kan ej ändras i framtiden'}, 'Ändra tidsreglaget till "idag" om du vill kunna ändra på växten.')
         return;
     }
 
