@@ -413,7 +413,7 @@ option:hover, .same-as-selected {
     border-radius: 6px;
 }
 
-.modal-content p {
+.modal-content {
     margin: 10px;
     font-size: 20px;
     font-weight: 200;

@@ -39,7 +39,8 @@ function openModal(title, subtitle, content){
     content.forEach(element => {
       var paragraph = document.createElement("p");
       paragraph.innerHTML = '• ' + element
-      document.getElementById('modal-content').appendChild(paragraph);
+      paragraph.classList.add('modal-content')
+      document.getElementById('modal-content-container').appendChild(paragraph);
     });
     modal.classList.add('open-modal');
 }
