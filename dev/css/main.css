@@ -355,6 +355,11 @@ option:hover, .same-as-selected {
     border-radius: 5px;
 }
 
+.open-modal {
+    visibility: visible !important;
+    opacity: 1 !important;
+}
+
 #modal-background {
     background-color: rgba(0, 0, 0, 0.2);
     position: fixed;
@@ -368,11 +373,6 @@ option:hover, .same-as-selected {
     opacity: 0;
     transition: visibility 0.3s linear, opacity 0.3s linear;
   }
-
-.open-modal {
-    visibility: visible;
-    opacity: 1;
-}
   
   #modal {
     background-color: rgb(61, 62, 65);
