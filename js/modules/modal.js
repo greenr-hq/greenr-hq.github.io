@@ -28,6 +28,7 @@ function openModal(title, subtitle, content){
       document.getElementById('modal-subtitle-badge').classList.add('delete')
     }
 
+    document.getElementById('modal-content-container').innerHTML = '';
     content.forEach(element => {
       var paragraph = document.createElement("p");
       paragraph.innerHTML = '• ' + element
