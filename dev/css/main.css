@@ -439,8 +439,10 @@ button:hover {
 @keyframes close_modal {
     from {
       opacity: 1;
+      visibility: visible;
     }
     to {
       opacity: 0;
+      visibility: hidden;
     }
 }
