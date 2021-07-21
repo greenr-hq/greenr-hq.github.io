@@ -356,7 +356,6 @@ option:hover, .same-as-selected {
 }
 
 #modal-background {
-    transition: visibility 0.2s linear, opacity 0.2s linear;
     background-color: rgba(0, 0, 0, 0.2);
     position: fixed;
     top: 0;
@@ -364,10 +363,18 @@ option:hover, .same-as-selected {
     width: 100%;
     height: 100%;
     z-index: 1;
+
+    visibility: hidden;
+    opacity: 0;
+    transition: visibility 0.3s linear, opacity 0.3s linear;
   }
+
+#modal-background .modal-open {
+    visibility: visible;
+    opacity: 1;
+}
   
   #modal {
-    transition: visibility 0.2s linear, opacity 0.2s linear;
     background-color: rgb(61, 62, 65);
     position: absolute;
     top: 50%;
@@ -415,42 +422,10 @@ button:hover {
 #close-button {
     color: white;
     align-self: flex-end;
-    transition: all 0.5s linear;
+    transition: all 0.2s linear;
 }
   
 #close-button:hover {
     cursor: pointer;
     color: rgb(168, 50, 50);
-}
-
-.close-modal {
-    animation: close_modal 500ms;
-}
-
-@keyframes open_modal {
-    from {
-      opacity: 0;
-    }
-    to {
-      opacity: 1;
-    }
-}
-
-@keyframes close_modal {
-    from {
-      opacity: 1;
-      visibility: visible;
-
-    }
-    to {
-        opacity: 0;
-        height: 0;
-        width: 0;
-        max-height: 0;
-        max-width: 0;
-        margin: 0 !important;
-        padding: 0;
-        visibility: hidden;
-        overflow: hidden;
-    }
 }
