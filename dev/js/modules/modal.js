@@ -24,13 +24,21 @@ window.addEventListener('click', function(event) {
   }
 });
 
-function openModal(icon, title, content){
-    document.getElementById('modal-title-icon').innerHTML = icon;
+function openModal(title, subtitle, content){
     document.getElementById('modal-title').innerHTML = title;
+    
+    if(subtitle.badge){
+      document.getElementById('modal-subtitle-text').innerHTML = subtitle.text;
+      document.getElementById('modal-subtitle-badge').innerHTML = subtitle.badge;
+      document.getElementById('modal-subtitle-badge').classList.remove('delete')
+    } else {
+      document.getElementById('modal-subtitle-text').innerHTML = subtitle.text;
+      document.getElementById('modal-subtitle-badge').classList.add('delete')
+    }
 
     content.forEach(element => {
       var paragraph = document.createElement("p");
-      paragraph.innerHTML = element
+      paragraph.innerHTML = '• ' + element
       document.getElementById('modal-content').appendChild(paragraph);
     });
     modal.classList.add('open-modal');

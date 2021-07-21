@@ -374,7 +374,7 @@ option:hover, .same-as-selected {
     transition: visibility 0.3s linear, opacity 0.3s linear;
   }
   
-  #modal {
+#modal {
     background-color: rgb(61, 62, 65);
     position: absolute;
     top: 50%;
@@ -390,18 +390,35 @@ option:hover, .same-as-selected {
     font-size: 1.5rem;
   }
 
-#modal-title-icon {
-    color: white;
-    font-size: 60px;
-}
 
 #modal-title {
+    margin-top: 15px;
+    margin-bottom: 10px;
+    text-transform: uppercase;
+    font-weight: 400;
+    letter-spacing: -1px;
+    font-size: 16px;
+    color: rgb(50, 168, 82);
+}
+
+#modal-subtitle {
     margin-top: 0;
+    font-size: 25px;
+}
+
+#modal-subtitle-badge {
+    font-size: 25px;
+    background-color: rgb(50, 168, 82);
+    padding: 3px 7px 0px 7px;
+    border-radius: 6px;
 }
 
 .modal-content p {
-    font-weight: 300;
-    margin: 0;
+    margin: 10px;
+    font-size: 20px;
+    font-weight: 200;
+    padding-left: 4%;
+    text-indent: -4%;
 }
   
 button {

@@ -425,9 +425,60 @@ function delete_cookie(name) {
     document.cookie = [name, '=; expires=Thu, 01-Jan-1970 00:00:01 GMT; path=/; domain=.', window.location.host.toString()].join('');
 }
 
+// Cookies
+
+function writeData(data){
+    document.cookie = data + "=" + JSON.stringify(data) + "; expires=Thu, 01 Jan 2100 00:00:00 UTC; path=/";
+}
+
+function readData() {
+    var name = "data=";
+    var ca = document.cookie.split(';');
+    for(var i = 0; i < ca.length; i++) {
+        var c = ca[i];
+        while (c.charAt(0) == ' ') {
+        c = c.substring(1);
+        }
+        if (c.indexOf(name) == 0) {
+        return c.substring(name.length, c.length);
+        }
+    }
+    return "";
+  }
+
 function see(delay){
     renderList(delay);
     updateInformation();
+}
+
+function checkUpdate(){
+
+    var data = readData()
+
+    if(plants.length == 0){
+
+        if(data == ""){
+
+        }
+
+    } else {
+
+        if(data == ""){
+            openModal(
+                'Systemuppdatering',
+                {
+                    badge: 'v. 1.1',
+                    text: 'Tidsmaskinen har anlänt!'
+                },
+                [
+                    'Se kommande bevattningar, upp till 7 dagar framåt!',
+                    'Uppdaterad sammanställningsvy',
+                    'Åtgärdat buggar och uppdaterat designen'
+                ]
+            )
+        }
+
+    }
 }
 
 function start(){
@@ -435,14 +486,5 @@ function start(){
     loadPlants();
     renderList();
     updateInformation();
-
-    openModal(
-        'info',
-        'New update available',
-        [
-            '- Feature 1',
-            '- Feature 2',
-            '- Feature 3'
-        ]
-    );
+    checkUpdate();
 }
