@@ -431,7 +431,7 @@ function delete_cookie(name) {
 // Cookies
 
 function writeData(data){
-    document.cookie = data + "=" + JSON.stringify(data) + "; expires=Thu, 01 Jan 2100 00:00:00 UTC; path=/";
+    document.cookie = 'data' + "=" + JSON.stringify(data) + "; expires=Thu, 01 Jan 2100 00:00:00 UTC; path=/";
 }
 
 function readData() {
