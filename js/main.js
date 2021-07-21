@@ -189,6 +189,7 @@ function refresh(){
     updateMenu();
     renderList();
     updateInformation();
+    document.getElementById('custom-select-time-default').click();
 }
 
 function areInputsFilled(){
@@ -316,6 +317,8 @@ function inputUpdated(){
 function goHome(){
 
     isHome = true;
+
+    document.getElementById('custom-select-time-default').click();
 
     document.getElementById('plants').classList.remove('hide');
     document.getElementById('add-icon').classList.remove('hide');
