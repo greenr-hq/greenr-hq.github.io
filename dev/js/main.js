@@ -1,3 +1,6 @@
+const VERSION = '11'
+const STORAGE_PROTOCOL = '1'
+
 var plants = [];
 
 var hasSelected = false;
@@ -455,15 +458,33 @@ function checkUpdate(){
 
     var data = readData()
 
-    if(plants.length == 0){
 
-        if(data == ""){
+    if(data == ""){
 
-        }
 
-    } else {
+        if(plants.length == 0){
 
-        if(data == ""){
+            openModal(
+                'Meddelande',
+                {
+                    text: 'Välkommen till greenr!'
+                },
+                [
+                    'Denna webbsida är till för dig som vill hantera och ha koll på dina växter.',
+                    'Börja med att lägga till en växt, det gör du genom att trycka på ' + <span class="material-icons" style="color:white;">add</span> + '.',
+                ]
+            )
+
+            data = {
+                meta: {
+                    version: VERSION,
+                    storage_protocol: STORAGE_PROTOCOL
+                }
+            }
+
+            writeData(data)
+
+        } else {
             openModal(
                 'Systemuppdatering',
                 {
@@ -476,8 +497,42 @@ function checkUpdate(){
                     'Åtgärdat buggar och uppdaterat designen'
                 ]
             )
+
+            data = {
+                meta: {
+                    version: VERSION,
+                    storage_protocol: STORAGE_PROTOCOL
+                }
+            }
+
+            writeData(data)
         }
 
+    } else {
+
+        if(VERSION > data.meta.version) {
+            openModal(
+                'Systemuppdatering',
+                {
+                    badge: 'v. 1.1',
+                    text: 'Tidsmaskinen har anlänt!'
+                },
+                [
+                    'Se kommande bevattningar, upp till 7 dagar framåt!',
+                    'Uppdaterad sammanställningsvy',
+                    'Åtgärdat buggar och uppdaterat designen'
+                ]
+            )
+
+            data = {
+                meta: {
+                    version: VERSION,
+                    storage_protocol: STORAGE_PROTOCOL
+                }
+            }
+
+            writeData(data)
+        }
     }
 }
 

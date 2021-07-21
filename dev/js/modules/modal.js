@@ -1,15 +1,7 @@
 // select the modal-background
 let modal = document.getElementById('modal-background');
-// select the close-btn 
-let closeBtn = document.getElementById('close-button');
 
 let doneBtn = document.getElementById('done-button');
-
-// hides the modal when the user clicks close-btn
-closeBtn.addEventListener('click', function() {
-
-  modal.classList.remove('open-modal');
-});
 
 doneBtn.addEventListener('click', function() {
   modal.classList.remove('open-modal');
