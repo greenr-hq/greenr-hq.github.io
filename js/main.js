@@ -1,3 +1,6 @@
+const VERSION = '11'
+const STORAGE_PROTOCOL = '1'
+
 var plants = [];
 
 var hasSelected = false;
@@ -6,7 +9,7 @@ var isHome = true;
 
 var red = 0;
 var yellow = 0;
-var green = 0;
+var all = 0;
 
 var selectedId = -1;
 
@@ -17,7 +20,7 @@ function renderList(delay = 0){
     var id = 0;
     red = 0;
     yellow = 0;
-    green = 0;
+    all = 0;
 
     plants.sort((a, b) => { return getStatusByPlant(b, delay) - getStatusByPlant(a, delay)});
 
@@ -29,7 +32,6 @@ function renderList(delay = 0){
 
         if(getStatus(id, delay) == 0){
             status = 'ok';
-            green++;
         } else if(getStatus(id, delay) == 1){
             status = 'warning';
             yellow++;
@@ -37,6 +39,8 @@ function renderList(delay = 0){
             status = 'danger';
             red++;
         }
+
+        all++;
 
         plantElement.id = 'plant-id-' + id;
         plantElement.className = 'plant';
@@ -94,7 +98,7 @@ function updateMenu(){
         if(hasSelected){
             document.querySelectorAll(".select-only").forEach(element => element.classList.add('material-icons-available'));
 
-            if(getStatus(selectedId) == 0){
+            if(getStatus(selectedId, 0) == 0){
                 document.querySelectorAll(".needs-water-only").forEach(element => element.classList.remove('material-icons-available'));
             }
         } else {
@@ -169,7 +173,6 @@ function seeNextDay(){
         updateMenu();
         renderList();
         updateInformation();
-        document.getElementById('see-next-day-icon').innerHTML = 'update';
     } else {
         hasSelected = false;
         isInFuture = true;
@@ -177,7 +180,6 @@ function seeNextDay(){
         updateMenu();
         renderList(1);
         updateInformation();
-        document.getElementById('see-next-day-icon').innerHTML = 'update_disabled';
     }
 }
 
@@ -206,7 +208,6 @@ function add(){
         document.getElementById('done-icon').classList.add('hide');
         document.getElementById('edit-icon').classList.add('hide');
         document.getElementById('delete-icon').classList.add('hide');
-        document.getElementById('see-next-day-icon').classList.add('hide');
         document.getElementById('refresh-icon').classList.add('hide');
         document.getElementById('back-icon').classList.remove('hide');
         document.getElementById('edit').classList.remove('hide');
@@ -256,7 +257,6 @@ function edit(){
             document.getElementById('add-icon').classList.add('hide');
             document.getElementById('done-icon').classList.add('hide');
             document.getElementById('delete-icon').classList.add('hide');
-            document.getElementById('see-next-day-icon').classList.add('hide');
             document.getElementById('refresh-icon').classList.add('hide');
             document.getElementById('back-icon').classList.remove('hide');
             document.getElementById('edit').classList.remove('hide');
@@ -295,6 +295,7 @@ function edit(){
             hasSelected = false;
             updateMenu();
             renderList();
+            updateInformation();
 
             goHome();
         }
@@ -321,7 +322,6 @@ function goHome(){
     document.getElementById('done-icon').classList.remove('hide');
     document.getElementById('edit-icon').classList.remove('hide');
     document.getElementById('delete-icon').classList.remove('hide');
-    document.getElementById('see-next-day-icon').classList.remove('hide');
     document.getElementById('refresh-icon').classList.remove('hide');
     document.getElementById('back-icon').classList.add('hide');
     document.getElementById('edit').classList.add('hide');
@@ -336,6 +336,9 @@ function goHome(){
     if(hasSelected){
         document.querySelectorAll(".select-only").forEach(element => element.classList.add('material-icons-available'));
 
+        if(getStatus(selectedId, 0) == 0){
+            document.querySelectorAll(".needs-water-only").forEach(element => element.classList.remove('material-icons-available'));
+        }
     } else {
         document.querySelectorAll(".select-only").forEach(element => element.classList.remove('material-icons-available'));
     }
@@ -389,15 +392,25 @@ function updateInformation(){
 
     var size = plants.length;
 
-    if(isInFuture){
-        document.getElementById('day').innerHTML = 'Imorgon';
-    } else {
-        document.getElementById('day').innerHTML = 'Idag';
+    document.getElementById('red-count').innerHTML = red;
+    document.getElementById('yellow-count').innerHTML = yellow;
+    document.getElementById('all-count').innerHTML = all;
+
+    document.getElementById('red').classList.add('delete')
+    document.getElementById('yellow').classList.add('delete')
+    document.getElementById('all').classList.add('delete')
+
+    if(red > 0){
+        document.getElementById('red').classList.remove('delete')
     }
 
-    document.getElementById('red').innerHTML = red;
-    document.getElementById('yellow').innerHTML = yellow;
-    document.getElementById('green').innerHTML = green;
+    if(yellow > 0){
+        document.getElementById('yellow').classList.remove('delete')
+    }
+
+    if(red == 0 && yellow == 0){
+        document.getElementById('all').classList.remove('delete')
+    }
 
 }
 
@@ -413,11 +426,120 @@ function readPlant(id) {
 
 function delete_cookie(name) {
     document.cookie = [name, '=; expires=Thu, 01-Jan-1970 00:00:01 GMT; path=/; domain=.', window.location.host.toString()].join('');
+}
+
+// Cookies
+
+function writeData(data){
+    document.cookie = 'data' + "=" + JSON.stringify(data) + "; expires=Thu, 01 Jan 2100 00:00:00 UTC; path=/";
+}
+
+function readData() {
+    var name = "data=";
+    var ca = document.cookie.split(';');
+    for(var i = 0; i < ca.length; i++) {
+        var c = ca[i];
+        while (c.charAt(0) == ' ') {
+        c = c.substring(1);
+        }
+        if (c.indexOf(name) == 0) {
+        return c.substring(name.length, c.length);
+        }
+    }
+    return "";
   }
+
+function see(delay){
+    renderList(delay);
+    updateInformation();
+}
+
+function checkUpdate(){
+
+    var data = readData()
+
+
+    if(data == ""){
+
+
+        if(plants.length == 0){
+
+            openModal(
+                'Meddelande',
+                {
+                    text: 'Välkommen till greenr!'
+                },
+                [
+                    'Denna webbsida är till för dig som vill hantera och ha koll på dina växter.',
+                    'Börja med att lägga till en växt, det gör du genom att trycka på <span class="material-icons" style="color:white;padding: 0;font-size: 18px;transform: translate(0%, 20%);">add</span>.',
+                ]
+            )
+
+            data = {
+                meta: {
+                    version: VERSION,
+                    storage_protocol: STORAGE_PROTOCOL
+                }
+            }
+
+            writeData(data)
+
+        } else {
+            openModal(
+                'Systemuppdatering',
+                {
+                    badge: 'v. 1.1',
+                    text: 'Tidsmaskins-uppdateringen'
+                },
+                [
+                    'Se kommande bevattningar, nu upp till 7 dagar framåt i tiden.',
+                    'Ny sammanställningsvy',
+                    'Buggar fixade'
+                ]
+            )
+
+            data = {
+                meta: {
+                    version: VERSION,
+                    storage_protocol: STORAGE_PROTOCOL
+                }
+            }
+
+            writeData(data)
+        }
+
+    } else {
+
+        if(VERSION > data.meta.version) {
+            openModal(
+                'Systemuppdatering',
+                {
+                    badge: 'v. 1.1',
+                    text: 'Tidsmaskins-uppdateringen'
+                },
+                [
+                    'Se kommande bevattningar, nu upp till 7 dagar framåt i tiden.',
+                    'Ny sammanställningsvy',
+                    'Buggar fixade'
+                ]
+            )
+
+            data = {
+                meta: {
+                    version: VERSION,
+                    storage_protocol: STORAGE_PROTOCOL
+                }
+            }
+
+            writeData(data)
+        }
+    }
+}
 
 function start(){
 
     loadPlants();
     renderList();
     updateInformation();
+    checkUpdate();
 }

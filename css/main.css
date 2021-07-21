@@ -45,6 +45,7 @@ h2 {
     height: 24px;
     line-height: 24px;
     margin-right: 20px;
+    line-height: 17px;
 }
 
 #plants {
@@ -115,9 +116,10 @@ h2 {
     background-color: rgb(168, 50, 50);
 }
 
-span#green {
+span#all {
     color: rgb(50, 168, 82);
     font-weight: 700;
+    margin-left: 5px;
 }
 
 span#yellow {
@@ -130,6 +132,30 @@ span#red {
     font-weight: 700;
 }
 
+#amber-icon {
+    padding: 0;
+    font-size: 15px;
+    vertical-align: bottom;
+    margin: 0px 5px 9px -3px;
+    color: rgb(211, 208, 66);
+}
+
+#danger-icon {
+    padding: 0;
+    font-size: 15px;
+    vertical-align: bottom;
+    margin: 0px 5px 9px -3px;
+    color:  rgb(168, 50, 50);
+}
+
+#all-icon {
+    padding: 0;
+    font-size: 15px;
+    vertical-align: bottom;
+    margin: 0px 5px 9px -3px;
+    color: rgb(50, 168, 82);
+}
+
 .material-icons {
     cursor: pointer;
     user-select: none;
@@ -138,8 +164,16 @@ span#red {
     color: rgb(61, 62, 65);
 }
 
+.spacing {
+    margin-left: 40px;
+}
+
 .material-icons.material-icons-available {
     color: rgb(232, 234, 237);
+}
+
+.material-icons.material-icons-available.blue {
+    color: rgb(44, 146, 214);
 }
 
 .material-icons.material-icons-available:hover {
@@ -147,6 +181,19 @@ span#red {
 }
 
 .hide {
+    opacity: 0;
+    height: 0;
+    width: 0;
+    max-height: 0;
+    max-width: 0;
+    margin: 0 !important;
+    padding: 0;
+    visibility: hidden;
+    overflow: hidden;
+}
+
+.delete {
+    display: none;
     opacity: 0;
     height: 0;
     width: 0;
@@ -222,4 +269,177 @@ input[type="date"]::-webkit-calendar-picker-indicator {
 ::-webkit-scrollbar-thumb:hover {
     background: rgb(65, 66, 70);
     border: 5px solid rgb(32, 33, 36);
+}
+
+::selection {
+    background: rgb(50, 168, 82);
+}
+::-moz-selection {
+    background: rgb(50, 168, 82);
+}
+
+
+
+#custom-select-time {
+    width: 130px;
+    display: inline-block;
+}
+
+  .custom-select {
+    position: relative;
+  }
+  
+  .custom-select select {
+    display: none;
+  }
+  
+  .select-selected {
+    transition: all 0.2s linear;
+    background-color: rgb(61, 62, 65);
+    padding: 5px;
+    border: 0;
+    border-radius: 5px;
+    color: rgb(232, 234, 237);
+    font-family: 'Josefin Sans', sans-serif;
+    margin: 0;
+  }
+  
+  .select-selected:after {
+    position: absolute;
+    content: "";
+    top: 12px;
+    right: 10px;
+    width: 0;
+    height: 0;
+    border: 6px solid transparent;
+    border-color: #fff transparent transparent transparent;
+  }
+  
+  /*point the arrow upwards when the select box is open (active):*/
+  .select-selected.select-arrow-active:after {
+    border-color: transparent transparent #fff transparent;
+    top: 7px;
+  }
+  
+  /*style the items (options), including the selected item:*/
+  .select-items div,.select-selected {
+    color: #ffffff;
+    border: 1px solid transparent;
+    border-color: transparent transparent rgba(0, 0, 0, 0.1) transparent;
+    cursor: pointer;
+    user-select: none;
+  }
+  
+  /*style items (options):*/
+  .select-items {
+    position: absolute;
+    background-color: rgb(61, 62, 65);
+    padding: 5px;
+    border: 0;
+    border-radius: 5px;
+    color: rgb(232, 234, 237);
+    font-family: 'Josefin Sans', sans-serif;
+    top: 100%;
+    left: 0;
+    right: 0;
+    z-index: 99;
+    line-height: 25px;
+  }
+  
+  .select-hide {
+    display: none;
+  }
+  
+option:hover, .same-as-selected {
+    background-color: rgb(65, 66, 70);
+    border-radius: 5px;
+}
+
+.open-modal {
+    visibility: visible !important;
+    opacity: 1 !important;
+}
+
+#modal-background {
+    background-color: rgba(0, 0, 0, 0.2);
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+
+    visibility: hidden;
+    opacity: 0;
+    transition: visibility 0.3s linear, opacity 0.3s linear;
+  }
+  
+#modal {
+    background-color: rgb(61, 62, 65);
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 400px;
+    padding: 10px 20px;
+    border-radius: 5px;
+    box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
+    font-size: 1.5rem;
+  }
+
+
+#modal-title {
+    margin-top: 15px;
+    margin-bottom: 10px;
+    text-transform: uppercase;
+    font-weight: 400;
+    letter-spacing: -1px;
+    font-size: 16px;
+    color: rgb(50, 168, 82);
+}
+
+#modal-subtitle {
+    margin-top: 0;
+    font-size: 25px;
+}
+
+#modal-subtitle-badge {
+    font-size: 25px;
+    background-color: rgb(50, 168, 82);
+    padding: 3px 7px 0px 7px;
+    border-radius: 6px;
+}
+
+.modal-content {
+    margin: 10px;
+    font-size: 20px;
+    font-weight: 200;
+    padding-left: 4%;
+    text-indent: -4%;
+}
+  
+button {
+    background-color: rgb(89, 90, 95);
+    color: white;
+    font-family: 'Josefin Sans', sans-serif;
+    border: none;
+    padding: 10px 30px;
+    margin-top: 35px;
+    font-size: 1rem;
+    border-radius: 8px;
+}
+
+button:hover {
+    background-color: rgb(96, 94, 102);
+}
+  
+#close-button {
+    color: white;
+    align-self: flex-end;
+    transition: all 0.2s linear;
+}
+  
+#close-button:hover {
+    cursor: pointer;
+    color: rgb(168, 50, 50);
 }

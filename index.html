@@ -7,28 +7,62 @@
 
     <link rel="icon" type="image/x-icon" href="img/icon.ico" />
 
-    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
     <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@200;400;700&display=swap" rel="stylesheet">
-
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Source+Code+Pro:wght@300&display=swap" rel="stylesheet">
 
     <link href="css/main.css" rel="stylesheet">
 </head>
     <body>
+
+        <!-- Modal Background and Modal -->
+        <div id="modal-background">
+            <div id="modal">
+                <h2 id="modal-title">Titel</h2>
+                <h2 id="modal-subtitle"><span id="modal-subtitle-badge"></span> <span id="modal-subtitle-text"></span></h2>
+                <div id="modal-content-container"></div>
+                <div class="buttons">
+                    <button id="done-button">Okej</button>
+                </div>
+            </div>
+        </div>
+
         <div id="pre">
             <h1 id="title"><span class="green">green</span>r</h1>
-            <h3 id="subtitle">version 1.0.2 av Pim Kennedy</h3>
+            <h3 id="subtitle">version 1.1 av Pim Kennedy</h3>
         </div>
 
         <div id="menu">
             <span id="back-icon" class="material-icons material-icons-available hide" onclick="javascript:goHome()">keyboard_arrow_left</span>
             <span id="add-icon" class="material-icons material-icons-available" onclick="javascript:add()">add</span>
-            <span id="done-icon" class="material-icons select-only needs-water-only" onclick="javascript:water()">done</span>
+            <span id="done-icon" class="material-icons select-only needs-water-only blue" onclick="javascript:water()">water_drop</span>
             <span id="edit-icon" class="material-icons select-only" onclick="javascript:edit()">edit</span>
             <span id="delete-icon" class="material-icons select-only" onclick="javascript:remove()">delete</span>
-            <span id="see-next-day-icon" class="material-icons material-icons-available" onclick="javascript:seeNextDay()">update</span>
             <span id="refresh-icon" class="material-icons material-icons-available" onclick="javascript:refresh()">cached</span>
-            <span id="information"><span id="red"></span> <span id="yellow"></span> <span id="green"></span> • <span id="day"></span></span>
+            <span id="information">
+                <span id="red">
+                    <span id="red-count"></span> <span id="danger-icon" class="material-icons">error</span>
+                </span>
+                <span id="yellow">
+                    <span id="yellow-count"></span> <span id="amber-icon" class="material-icons">warning</span>
+                </span>
+                <span id="all">
+                    <span id="all-count"></span> <span id="all-icon" class="material-icons">check_circle</span>
+                </span>
+                <span id="time"> • Visar <div id="custom-select-time" class="custom-select">
+                        <select>
+                            <option>idag</option>
+                            <option onclick="javascript:see(0);">idag</option>
+                            <option onclick="javascript:see(1);">imorgon</option>
+                            <option onclick="javascript:see(2);">i övermorgon</option>
+                            <option onclick="javascript:see(3);">om 3 dagar</option>
+                            <option onclick="javascript:see(5);">om 5 dagar</option>
+                            <option onclick="javascript:see(7);">om 7 dagar</option>
+                        </select>
+                    </div>
+                </span>
+            </span>
         </div>
 
         <div id="plants">
@@ -44,5 +78,7 @@
     </body>
 
     <script src="js/main.js"></script>
+    <script src="js/modules/dropdown.js"></script>
+    <script src="js/modules/modal.js"></script>
     <script>start();</script>
 </html>

@@ -1,0 +1,11 @@
+{
+    "name": "1.1",
+    "time": "2021-07-20",
+    "content": [
+        "Added powerup system",
+        "Added point system",
+        "Added Server information tab",
+        "Fixed a few stability issues",
+        "Fixed a few bugs"
+    ]
+}
