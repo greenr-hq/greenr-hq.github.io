@@ -369,7 +369,7 @@ option:hover, .same-as-selected {
     transition: visibility 0.3s linear, opacity 0.3s linear;
   }
 
-.open-modal #modal-background {
+.open-modal {
     visibility: visible;
     opacity: 1;
 }
