@@ -412,6 +412,8 @@ function updateInformation(){
         document.getElementById('all').classList.remove('delete')
     }
 
+    document.getElementById('custom-select-time-default').click();
+
 }
 
 function writePlant(id, data) {
