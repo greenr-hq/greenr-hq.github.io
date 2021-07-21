@@ -39,7 +39,7 @@ function openModal(title, subtitle, content){
       });
     } else {
       var paragraph = document.createElement("p");
-      paragraph.innerHTML = element
+      paragraph.innerHTML = content
       paragraph.classList.add('modal-content')
       document.getElementById('modal-content-container').appendChild(paragraph);
     }
