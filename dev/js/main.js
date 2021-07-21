@@ -471,7 +471,7 @@ function checkUpdate(){
                 },
                 [
                     'Denna webbsida är till för dig som vill hantera och ha koll på dina växter.',
-                    'Börja med att lägga till en växt, det gör du genom att trycka på <span class="material-icons" style="color:white;">add</span>.',
+                    'Börja med att lägga till en växt, det gör du genom att trycka på <span class="material-icons" style="color:white;padding: 0;font-size: 18px;transform: translate(0%, 20%);">add</span>.',
                 ]
             )
 
