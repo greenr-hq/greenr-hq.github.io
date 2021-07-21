@@ -423,6 +423,10 @@ button:hover {
     color: rgb(168, 50, 50);
 }
 
+#close-modal {
+    animation: close_modal 500ms;
+}
+
 @keyframes open_modal {
     from {
       opacity: 0;
