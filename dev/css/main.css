@@ -356,8 +356,8 @@ option:hover, .same-as-selected {
 }
 
 .open-modal {
-    visibility: visible;
-    opacity: 1;
+    visibility: visible !important;
+    opacity: 1 !important;
 }
 
 #modal-background {
