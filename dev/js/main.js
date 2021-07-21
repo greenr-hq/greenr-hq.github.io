@@ -489,12 +489,12 @@ function checkUpdate(){
                 'Systemuppdatering',
                 {
                     badge: 'v. 1.1',
-                    text: 'Tidsmaskinen har anlänt!'
+                    text: 'Tidsmaskins-uppdateringen'
                 },
                 [
-                    'Se kommande bevattningar, upp till 7 dagar framåt!',
-                    'Uppdaterad sammanställningsvy',
-                    'Åtgärdat buggar och uppdaterat designen'
+                    'Se kommande bevattningar, nu upp till 7 dagar framåt i tiden.',
+                    'Ny sammanställningsvy',
+                    'Buggar fixade'
                 ]
             )
 
@@ -515,12 +515,12 @@ function checkUpdate(){
                 'Systemuppdatering',
                 {
                     badge: 'v. 1.1',
-                    text: 'Tidsmaskinen har anlänt!'
+                    text: 'Tidsmaskins-uppdateringen'
                 },
                 [
-                    'Se kommande bevattningar, upp till 7 dagar framåt!',
-                    'Uppdaterad sammanställningsvy',
-                    'Åtgärdat buggar och uppdaterat designen'
+                    'Se kommande bevattningar, nu upp till 7 dagar framåt i tiden.',
+                    'Ny sammanställningsvy',
+                    'Buggar fixade'
                 ]
             )
 
