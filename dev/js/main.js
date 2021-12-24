@@ -486,7 +486,7 @@ function bar(){
 
                     var watered = new Date(Date.parse(plant.last_time_watered));
                 
-                    var since_watering = Math.floor((now - watered) / (1000*60*60*24));
+                    var since_watering = Math.floor((now - watered) / (1000*60*60*24)) + d;
 
                     if(since_watering == 0){
                         count++;
