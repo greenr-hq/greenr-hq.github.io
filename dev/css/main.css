@@ -69,7 +69,6 @@ h2 {
 
 .bar-data {
     position: absolute;
-    height: 100px;
     width: 10px;
     background-color: rgb(50, 168, 82);
     bottom: 0;

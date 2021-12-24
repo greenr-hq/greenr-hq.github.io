@@ -486,8 +486,8 @@ function bar(){
                 }
             })
 
-            document.getElementById('bar-data-' + d).style.height = 2 + (count * 10);
-            document.getElementById('bar-data-' + d).style.left = d * 15;
+            document.getElementById('bar-data-' + d).style.height = 2 + (count * 10) + "px";
+            document.getElementById('bar-data-' + d).style.left = d * 15 + "px";
         }
 
     } else {
