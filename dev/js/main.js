@@ -481,8 +481,6 @@ function bar(){
             var count = 0;
 
             plants.forEach(plant => {
-    
-                if(getStatusByPlant(plant, d) == 1){
 
                     var watered = new Date(Date.parse(plant.last_time_watered));
                 
@@ -494,7 +492,6 @@ function bar(){
                     } else if(since_watering % plant.watering_interval == 0){
                         count++;
                     }
-                }
             })
 
             document.getElementById('bar-data-' + d).style.height = 2 + (count * 10) + "px";
