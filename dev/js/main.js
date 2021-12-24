@@ -495,7 +495,7 @@ function bar(){
             })
 
             document.getElementById('bar-data-' + d).style.height = 2 + (count * 10) + "px";
-            document.getElementById('bar-data-' + d).style.left = d * 30 + "px";
+            document.getElementById('bar-data-' + d).style.left = d * 35 + "px";
         }
 
     } else {
