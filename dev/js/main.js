@@ -486,6 +486,7 @@ function bar(){
             })
 
             document.getElementById('bar-data-' + d).style.height = count * 10;
+            document.getElementById('bar-data-' + d).style.left = d * 15;
         }
 
     } else {
