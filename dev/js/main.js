@@ -474,6 +474,7 @@ function bar(){
         document.getElementById('add-icon').classList.remove('material-icons-available');
         document.getElementById('information').classList.add('hide');
     
+        var now = new Date();
 
         for(var d = 0; d < 14; d++){
 
@@ -482,7 +483,18 @@ function bar(){
             plants.forEach(plant => {
     
                 if(getStatusByPlant(plant, d) == 1){
-                    count++;
+
+                    var watered = new Date(Date.parse(plant.last_time_watered));
+                
+                    var since_watering = Math.floor((now - watered) / (1000*60*60*24)) + delay;
+
+                    if(since_watering == 0){
+                        count++;
+                    }
+
+                    if(since_watering % plant.watering_interval == 0){
+                        count++;
+                    }
                 }
             })
 
