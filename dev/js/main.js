@@ -490,9 +490,8 @@ function bar(){
 
                     if(since_watering == 0){
                         count++;
-                    }
 
-                    if(since_watering % plant.watering_interval == 0){
+                    } else if(since_watering % plant.watering_interval == 0){
                         count++;
                     }
                 }
