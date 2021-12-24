@@ -211,7 +211,7 @@ function add(){
         document.getElementById('refresh-icon').classList.add('hide');
         document.getElementById('bar-icon').classList.add('hide');
         document.getElementById('back-icon').classList.remove('hide');
-        document.getElementById('bar').classList.remove('hide');
+        document.getElementById('add').classList.remove('hide');
         document.getElementById('add-icon').classList.remove('material-icons-available');
         document.getElementById('information').classList.add('hide');
 
