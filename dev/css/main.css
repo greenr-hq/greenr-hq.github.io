@@ -70,7 +70,7 @@ h2 {
 .bar-data {
     position: absolute;
     border-radius: 5px;
-    width: 10px;
+    width: 25px;
     background-color: rgb(50, 168, 82);
     bottom: 0;
 }
