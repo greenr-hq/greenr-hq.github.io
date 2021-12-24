@@ -62,6 +62,27 @@ h2 {
     margin: 10px
 }
 
+#bar {
+    position: relative;
+    height: 200px;
+}
+
+.bar-data {
+    position: absolute;
+    height: 100px;
+    width: 10px;
+    background-color: rgb(50, 168, 82);
+    bottom: 0;
+}
+
+#bar-data-1 {
+    height: 100px;
+}
+
+#bar-data-2 {
+    height: 50px;
+}
+
 .plant {
     transition: all 0.2s linear;
     margin-top: 5px;
