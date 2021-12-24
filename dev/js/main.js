@@ -470,12 +470,12 @@ function bar(){
         document.getElementById('delete-icon').classList.add('hide');
         document.getElementById('refresh-icon').classList.add('hide');
         document.getElementById('bar-icon').classList.add('hide');
-        document.getElementById('bar').classList.remove('hide');
         document.getElementById('back-icon').classList.remove('hide');
         document.getElementById('information').classList.add('hide');
+        document.getElementById('bar').classList.remove('hide');
     
 
-        for(var d = 0; d < 7; d++){
+        for(var d = 0; d < 14; d++){
 
             var count = 0;
 
