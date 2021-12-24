@@ -470,6 +470,7 @@ function bar(){
         document.getElementById('delete-icon').classList.add('hide');
         document.getElementById('refresh-icon').classList.add('hide');
         document.getElementById('bar-icon').classList.add('hide');
+        document.getElementById('bar').classList.remove('hide');
         document.getElementById('back-icon').classList.remove('hide');
         document.getElementById('information').classList.add('hide');
     
@@ -485,7 +486,7 @@ function bar(){
                 }
             })
 
-            document.getElementById('bar-data-' + d).style.height = count * 10;
+            document.getElementById('bar-data-' + d).style.height = 2 + (count * 10);
             document.getElementById('bar-data-' + d).style.left = d * 15;
         }
 
