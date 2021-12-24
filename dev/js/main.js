@@ -209,6 +209,7 @@ function add(){
         document.getElementById('edit-icon').classList.add('hide');
         document.getElementById('delete-icon').classList.add('hide');
         document.getElementById('refresh-icon').classList.add('hide');
+        document.getElementById('bar-icon').classList.add('hide');
         document.getElementById('back-icon').classList.remove('hide');
         document.getElementById('edit').classList.remove('hide');
         document.getElementById('add-icon').classList.remove('material-icons-available');
@@ -258,6 +259,7 @@ function edit(){
             document.getElementById('done-icon').classList.add('hide');
             document.getElementById('delete-icon').classList.add('hide');
             document.getElementById('refresh-icon').classList.add('hide');
+            document.getElementById('bar-icon').classList.add('hide');
             document.getElementById('back-icon').classList.remove('hide');
             document.getElementById('edit').classList.remove('hide');
             document.getElementById('information').classList.add('hide');
@@ -323,6 +325,7 @@ function goHome(){
     document.getElementById('edit-icon').classList.remove('hide');
     document.getElementById('delete-icon').classList.remove('hide');
     document.getElementById('refresh-icon').classList.remove('hide');
+    document.getElementById('bar-icon').classList.remove('hide');
     document.getElementById('back-icon').classList.add('hide');
     document.getElementById('edit').classList.add('hide');
     document.getElementById('add-icon').classList.add('material-icons-available');
@@ -454,6 +457,30 @@ function see(delay){
     updateInformation();
 }
 
+function bar(){
+    
+    if(isHome){
+
+        isHome = false;
+
+        document.getElementById('plants').classList.add('hide');
+        document.getElementById('done-icon').classList.add('hide');
+        document.getElementById('edit-icon').classList.add('hide');
+        document.getElementById('delete-icon').classList.add('hide');
+        document.getElementById('refresh-icon').classList.add('hide');
+        document.getElementById('back-icon').classList.remove('hide');
+        document.getElementById('information').classList.add('hide');
+
+    } else {
+
+        updateMenu();
+        renderList();
+        updateInformation();
+
+        goHome();
+    }
+}
+
 function checkUpdate(){
 
     var data = readData()
@@ -514,11 +541,11 @@ function checkUpdate(){
             openModal(
                 'Systemuppdatering',
                 {
-                    badge: 'v. 1.1',
-                    text: 'Tidsmaskins-uppdateringen'
+                    badge: 'v. 1.2',
+                    text: 'Ännu mer kontroll!'
                 },
                 [
-                    'Se kommande bevattningar, nu upp till 7 dagar framåt i tiden.',
+                    'Se antalet bevattningstillfällen i framtiden - nu i en fin graf.',
                     'Ny sammanställningsvy',
                     'Buggar fixade'
                 ]
