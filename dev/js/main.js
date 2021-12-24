@@ -472,6 +472,21 @@ function bar(){
         document.getElementById('bar-icon').classList.add('hide');
         document.getElementById('back-icon').classList.remove('hide');
         document.getElementById('information').classList.add('hide');
+    
+
+        for(var d = 0; d < 7; d++){
+
+            var count = 0;
+
+            plants.forEach(plant => {
+    
+                if(getStatusByPlant(plant, d) == 1){
+                    count++;
+                }
+            })
+
+            document.getElementById('bar-data-' + d).style.height = count * 10;
+        }
 
     } else {
 
