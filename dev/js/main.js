@@ -580,6 +580,9 @@ function checkUpdate(){
 
     } else {
 
+        console.log(data)
+
+        //???
         if(VERSION > data.meta.version) {
             openModal(
                 'Systemuppdatering',
