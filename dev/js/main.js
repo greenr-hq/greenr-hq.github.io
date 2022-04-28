@@ -581,7 +581,7 @@ function checkUpdate(){
     } else {
 
         //???
-        if(VERSION > JSON.parse(data.meta.version)) {
+        if(VERSION > JSON.parse(data).meta.version) {
             openModal(
                 'Systemuppdatering',
                 {
