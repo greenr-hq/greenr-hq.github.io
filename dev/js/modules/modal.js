@@ -23,6 +23,7 @@ function openModal(title, subtitle, content, settings, action){
     doneBtn.removeAttribute('onclick')
     abortBtn.removeAttribute('onclick')
     document.getElementById('abort-button').classList.add('hide')
+    doneBtn.innerHTML = 'Okej'
 
     document.getElementById('modal-title').innerHTML = title;
     
@@ -59,9 +60,9 @@ function openModal(title, subtitle, content, settings, action){
 
       let doneBtn = document.getElementById('done-button');
 
-      doneBtn.addEventListener('click', function() {
+      doneBtn.onclick = function(){
         action.execution()
-      });
+      };
     }
 
     modal.classList.add('open-modal');
