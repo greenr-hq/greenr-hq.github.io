@@ -63,7 +63,7 @@ function pick(id){
 
     if(isInFuture)
     {
-        openModal('Meddelande', {text: 'Växter kan ej ändras i framtiden'}, 'Ändra tidsreglaget till "idag" om du vill kunna ändra på växten.', {list: false})
+        openModal('Meddelande', {text: 'Växter kan ej ändras i framtiden'}, ['Sätt tidsreglaget till "idag" för att ändra.'], {list: false})
         return;
     }
 
@@ -151,7 +151,7 @@ function remove(){
             {
                 text: 'Ta bort växt?'
             },
-            ['Denna åtgärd kan inte ångras när den väl är gjord.'],
+            ['Åtgärden kan ej ångras.'],
             {list: false},
             {
                 done: 'Ta bort',

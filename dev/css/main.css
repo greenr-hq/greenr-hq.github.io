@@ -450,7 +450,7 @@ button {
 }
 
 button:hover {
-    background-color: rgb(96, 94, 102);
+    background-color: rgba(89, 90, 95, 0.2);
 }
   
 #close-button {

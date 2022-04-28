@@ -55,6 +55,7 @@ function openModal(title, subtitle, content, settings, action){
 
       document.getElementById('abort-button').innerHTML = action.abort;
       document.getElementById('abort-button').classList.remove('hide')
+      abortBtn.onclick = function() {modal.classList.remove('open-modal');};
 
       let doneBtn = document.getElementById('done-button');
 
