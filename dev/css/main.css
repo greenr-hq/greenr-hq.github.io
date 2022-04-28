@@ -450,7 +450,11 @@ button {
 }
 
 button:hover {
-    background-color: rgba(89, 90, 95, 0.2);
+    background-color: rgb(96, 94, 102);
+}
+
+.abort-button:hover {
+    background-color: rgba(96, 94, 102, 0.2);
 }
   
 #close-button {
