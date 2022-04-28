@@ -17,7 +17,7 @@ window.addEventListener('click', function(event) {
   }
 });
 
-function openModal(title, subtitle, content, action){
+function openModal(title, subtitle, content, settings, action){
 
   
     doneBtn.removeAttribute('onclick')
@@ -35,9 +35,17 @@ function openModal(title, subtitle, content, action){
       document.getElementById('modal-subtitle-badge').classList.add('delete')
     }
 
+    document.getElementById('modal-content-container').innerHTML = ''
+
+    var content_prefix = ''
+
+    if(settings.list){
+      content_prefix = '• '
+    }
+
     content.forEach(element => {
       var paragraph = document.createElement("p");
-      paragraph.innerHTML = '• ' + element
+      paragraph.innerHTML = content_prefix + element
       paragraph.classList.add('modal-content')
       document.getElementById('modal-content-container').appendChild(paragraph);
     });
