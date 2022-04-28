@@ -1,4 +1,4 @@
-const VERSION = '13'
+const VERSION = '12'
 const STORAGE_PROTOCOL = '1'
 
 var plants = [];
@@ -151,7 +151,7 @@ function remove(){
             {
                 text: 'Ta bort växt?'
             },
-            'Denna åtgärd kan inte ångras när den väl är gjord.',
+            ['Denna åtgärd kan inte ångras när den väl är gjord.'],
             {
                 done: 'Ta bort',
                 abort: 'Avbryt',
@@ -558,7 +558,7 @@ function checkUpdate(){
             openModal(
                 'Systemuppdatering',
                 {
-                    badge: 'v. 1.3',
+                    badge: 'v. 1.2',
                     text: 'Bättre syn på framtiden!'
                 },
                 [
@@ -585,7 +585,7 @@ function checkUpdate(){
             openModal(
                 'Systemuppdatering',
                 {
-                    badge: 'v. 1.3',
+                    badge: 'v. 1.2',
                     text: 'Bättre syn på framtiden!'
                 },
                 [
