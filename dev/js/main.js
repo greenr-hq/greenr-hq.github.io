@@ -63,7 +63,7 @@ function pick(id){
 
     if(isInFuture)
     {
-        openModal('Meddelande', {text: 'Växter kan ej ändras i framtiden'}, {}, 'Ändra tidsreglaget till "idag" om du vill kunna ändra på växten.')
+        openModal('Meddelande', {text: 'Växter kan ej ändras i framtiden'}, 'Ändra tidsreglaget till "idag" om du vill kunna ändra på växten.', {list: false})
         return;
     }
 
@@ -151,8 +151,8 @@ function remove(){
             {
                 text: 'Ta bort växt?'
             },
-            {},
             ['Denna åtgärd kan inte ångras när den väl är gjord.'],
+            {list: false},
             {
                 done: 'Ta bort',
                 abort: 'Avbryt',
@@ -547,11 +547,11 @@ function checkUpdate(){
                 {
                     text: 'Välkommen till greenr!'
                 },
-                {list: true},
                 [
                     'Denna webbsida är till för dig som vill hantera och ha koll på dina växter.',
                     'Börja med att lägga till en växt, det gör du genom att trycka på <span class="material-icons" style="color:white;padding: 0;font-size: 18px;transform: translate(0%, 20%);">add</span>.',
-                ]
+                ],
+                {list: true}
             )
 
             data = {
@@ -570,12 +570,12 @@ function checkUpdate(){
                     badge: 'v. 1.2',
                     text: 'Bättre syn på framtiden!'
                 },
-                {list: true},
                 [
                     'Du kan nu se en graf på kommande bevattningar.',
                     'Ny dialogruta vid borttagelse av växter.',
                     'Bugs på växter borta! :)'
-                ]
+                ],
+                {list: true}
             )
 
             data = {
@@ -598,12 +598,12 @@ function checkUpdate(){
                     badge: 'v. 1.2',
                     text: 'Bättre syn på framtiden!'
                 },
-                {list: true},
                 [
                     'Du kan nu se en graf på kommande bevattningar.',
                     'Ny dialogruta vid borttagelse av växter.',
                     'Bugs på växter borta! :)'
-                ]
+                ],
+                {list: true}
             )
 
             data = {
