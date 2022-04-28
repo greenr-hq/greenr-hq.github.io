@@ -65,6 +65,9 @@ h2 {
 #bar {
     position: relative;
     height: 300px;
+    width: 480px;
+    display: table;
+    margin: 0 auto;
 }
 
 .bar-data {
@@ -440,6 +443,10 @@ button {
     margin-top: 35px;
     font-size: 1rem;
     border-radius: 8px;
+}
+
+.abort-button {
+    background-color: rgba(0,0,0,0);
 }
 
 button:hover {

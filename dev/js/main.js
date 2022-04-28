@@ -1,4 +1,4 @@
-const VERSION = '11'
+const VERSION = '13'
 const STORAGE_PROTOCOL = '1'
 
 var plants = [];
@@ -63,6 +63,7 @@ function pick(id){
 
     if(isInFuture)
     {
+        openModal('Meddelande', {text: 'Växter kan ej ändras i framtiden'}, 'Ändra tidsreglaget till "idag" om du vill kunna ändra på växten.')
         return;
     }
 
@@ -143,12 +144,26 @@ function getStatusByPlant(plant, delay){
 
 function remove(){
     if(hasSelected){
-        removePlant(plants[selectedId]);
-        plants.splice(selectedId, 1)
-        hasSelected = false;
-        updateMenu();
-        renderList();
-        updateInformation();
+
+
+        openModal(
+            'Meddelande',
+            {
+                text: 'Ta bort växt?'
+            },
+            'Denna åtgärd kan inte ångras när den väl är gjord.',
+            {
+                done: 'Ta bort',
+                abort: 'Avbryt',
+                execution: () => {
+                    removePlant(plants[selectedId]);
+                    plants.splice(selectedId, 1)
+                    hasSelected = false;
+                    updateMenu();
+                    renderList();
+                    updateInformation();
+                }
+            })
     }
 }
 
@@ -469,6 +484,7 @@ function bar(){
         document.getElementById('edit-icon').classList.add('hide');
         document.getElementById('delete-icon').classList.add('hide');
         document.getElementById('refresh-icon').classList.add('hide');
+        document.getElementById('bar-icon').classList.add('hide');
         document.getElementById('back-icon').classList.remove('hide');
         document.getElementById('bar').classList.remove('hide');
         document.getElementById('add-icon').classList.remove('material-icons-available');
@@ -542,13 +558,13 @@ function checkUpdate(){
             openModal(
                 'Systemuppdatering',
                 {
-                    badge: 'v. 1.1',
-                    text: 'Tidsmaskins-uppdateringen'
+                    badge: 'v. 1.3',
+                    text: 'Bättre syn på framtiden!'
                 },
                 [
-                    'Se kommande bevattningar, nu upp till 7 dagar framåt i tiden.',
-                    'Ny sammanställningsvy',
-                    'Buggar fixade'
+                    'Du kan nu se en graf på kommande bevattningar.',
+                    'Ny dialogruta vid borttagelse av växter.',
+                    'Bugs på växter borta! :)'
                 ]
             )
 
@@ -568,13 +584,13 @@ function checkUpdate(){
             openModal(
                 'Systemuppdatering',
                 {
-                    badge: 'v. 1.2',
-                    text: 'Ännu mer kontroll!'
+                    badge: 'v. 1.3',
+                    text: 'Bättre syn på framtiden!'
                 },
                 [
-                    'Se antalet bevattningstillfällen i framtiden - nu i en fin graf.',
-                    'Ny sammanställningsvy',
-                    'Buggar fixade'
+                    'Du kan nu se en graf på kommande bevattningar.',
+                    'Ny dialogruta vid borttagelse av växter.',
+                    'Bugs på växter borta! :)'
                 ]
             )
 

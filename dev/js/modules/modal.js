@@ -2,6 +2,7 @@
 let modal = document.getElementById('modal-background');
 
 let doneBtn = document.getElementById('done-button');
+let abortBtn = document.getElementById('abort-button');
 
 doneBtn.addEventListener('click', function() {
   modal.classList.remove('open-modal');
@@ -16,7 +17,13 @@ window.addEventListener('click', function(event) {
   }
 });
 
-function openModal(title, subtitle, content){
+function openModal(title, subtitle, content, action){
+
+  
+    doneBtn.removeAttribute('onclick')
+    abortBtn.removeAttribute('onclick')
+    document.getElementById('abort-button').classList.add('hide')
+
     document.getElementById('modal-title').innerHTML = title;
     
     if(subtitle.badge){
@@ -34,5 +41,19 @@ function openModal(title, subtitle, content){
       paragraph.classList.add('modal-content')
       document.getElementById('modal-content-container').appendChild(paragraph);
     });
+
+    if(action){
+      document.getElementById('done-button').innerHTML = action.done;
+
+      document.getElementById('abort-button').innerHTML = action.abort;
+      document.getElementById('abort-button').classList.remove('hide')
+
+      let doneBtn = document.getElementById('done-button');
+
+      doneBtn.addEventListener('click', function() {
+        action.execution()
+      });
+    }
+
     modal.classList.add('open-modal');
 }
