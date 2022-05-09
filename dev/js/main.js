@@ -614,6 +614,8 @@ function checkUpdate(){
             }
 
             writeData(data)
+        } else {
+            greet();
         }
     }
 }
