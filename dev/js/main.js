@@ -624,16 +624,26 @@ function greet(){
     var phrase = ''
 
     if(hour > 4){
-        phrase = 'godmorgon'
+        phrase = 'Godmorgon'
     } else if(hour > 10){
-        phrase = 'god förmiddag'
+        phrase = 'God förmiddag'
     } else if(hour > 11){
-        phrase = 'god eftermiddag'
+        phrase = 'God eftermiddag'
     } else if(hour > 18){
-        phrase = 'god kväll'
+        phrase = 'God kväll'
     }
 
-    openModal('Meddelande', {text: phrase}, [(red+yellow)+' växter vill bli vattnade. Ha en fin dag!'], {list: false})
+    var plants_phrase = ''
+
+    if((red+yellow) == 0){
+        plants_phrase = 'Inga växter'
+    } else if((red+yellow) == 1){
+        plants_phrase = 'En växt'
+    } else {
+        plants_phrase = (red+yellow) + ' växter'
+    }
+
+    openModal('Meddelande', {text: phrase}, [plants_phrase + ' behöver vattnas. Ha en fin dag!'], {list: false})
 }
 
 function start(){
@@ -642,4 +652,5 @@ function start(){
     renderList();
     updateInformation();
     checkUpdate();
+    greet();
 }
