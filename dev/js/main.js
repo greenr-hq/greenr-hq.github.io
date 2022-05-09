@@ -618,6 +618,24 @@ function checkUpdate(){
     }
 }
 
+function greet(){
+
+    var hour = new Date().getHours()
+    var phrase = ''
+
+    if(hour > 4){
+        phrase = 'godmorgon'
+    } else if(hour > 10){
+        phrase = 'god förmiddag'
+    } else if(hour > 11){
+        phrase = 'god eftermiddag'
+    } else if(hour > 18){
+        phrase = 'god kväll'
+    }
+
+    openModal('Meddelande', {text: phrase}, [(red+yellow)+' växter vill bli vattnade. Ha en fin dag!'], {list: false})
+}
+
 function start(){
 
     loadPlants();
