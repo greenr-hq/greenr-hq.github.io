@@ -1,4 +1,4 @@
-const VERSION = '11'
+const VERSION = '13'
 const STORAGE_PROTOCOL = '1'
 
 var plants = [];
@@ -63,7 +63,7 @@ function pick(id){
 
     if(isInFuture)
     {
-        openModal('Meddelande', {text: 'Växter kan ej ändras i framtiden'}, 'Ändra tidsreglaget till "idag" om du vill kunna ändra på växten.')
+        openModal('Meddelande', {text: 'Växter kan ej ändras i framtiden'}, ['Sätt tidsreglaget till "idag" för att ändra.'], {list: false})
         return;
     }
 
@@ -144,12 +144,27 @@ function getStatusByPlant(plant, delay){
 
 function remove(){
     if(hasSelected){
-        removePlant(plants[selectedId]);
-        plants.splice(selectedId, 1)
-        hasSelected = false;
-        updateMenu();
-        renderList();
-        updateInformation();
+
+
+        openModal(
+            'Meddelande',
+            {
+                text: 'Ta bort växt?'
+            },
+            ['Åtgärden kan ej ångras.'],
+            {list: false},
+            {
+                done: 'Ta bort',
+                abort: 'Avbryt',
+                execution: () => {
+                    removePlant(plants[selectedId]);
+                    plants.splice(selectedId, 1)
+                    hasSelected = false;
+                    updateMenu();
+                    renderList();
+                    updateInformation();
+                }
+            })
     }
 }
 
@@ -190,7 +205,6 @@ function refresh(){
     updateMenu();
     renderList();
     updateInformation();
-        document.getElementById('custom-select-time-default').click();
 }
 
 function areInputsFilled(){
@@ -211,6 +225,7 @@ function add(){
         document.getElementById('edit-icon').classList.add('hide');
         document.getElementById('delete-icon').classList.add('hide');
         document.getElementById('refresh-icon').classList.add('hide');
+        document.getElementById('bar-icon').classList.add('hide');
         document.getElementById('back-icon').classList.remove('hide');
         document.getElementById('edit').classList.remove('hide');
         document.getElementById('add-icon').classList.remove('material-icons-available');
@@ -260,6 +275,7 @@ function edit(){
             document.getElementById('done-icon').classList.add('hide');
             document.getElementById('delete-icon').classList.add('hide');
             document.getElementById('refresh-icon').classList.add('hide');
+            document.getElementById('bar-icon').classList.add('hide');
             document.getElementById('back-icon').classList.remove('hide');
             document.getElementById('edit').classList.remove('hide');
             document.getElementById('information').classList.add('hide');
@@ -325,6 +341,7 @@ function goHome(){
     document.getElementById('edit-icon').classList.remove('hide');
     document.getElementById('delete-icon').classList.remove('hide');
     document.getElementById('refresh-icon').classList.remove('hide');
+    document.getElementById('bar-icon').classList.remove('hide');
     document.getElementById('back-icon').classList.add('hide');
     document.getElementById('edit').classList.add('hide');
     document.getElementById('add-icon').classList.add('material-icons-available');
@@ -453,18 +470,66 @@ function readData() {
 
 function see(delay){
 
-
     if(delay == 0){
-        isInFuture = false;
+        isInFuture = false
     } else {
-        isInFuture = true;
-        hasSelected = false;
-        unselectAll();
-        updateMenu();
+        isInFuture = true
     }
 
     renderList(delay);
     updateInformation();
+}
+
+function bar(){
+    
+    if(isHome){
+
+        isHome = false;
+
+        document.getElementById('plants').classList.add('hide');
+        document.getElementById('add-icon').classList.add('hide');
+        document.getElementById('done-icon').classList.add('hide');
+        document.getElementById('edit-icon').classList.add('hide');
+        document.getElementById('delete-icon').classList.add('hide');
+        document.getElementById('refresh-icon').classList.add('hide');
+        document.getElementById('bar-icon').classList.add('hide');
+        document.getElementById('back-icon').classList.remove('hide');
+        document.getElementById('bar').classList.remove('hide');
+        document.getElementById('add-icon').classList.remove('material-icons-available');
+        document.getElementById('information').classList.add('hide');
+    
+        var now = new Date();
+
+        for(var d = 0; d < 14; d++){
+
+            var count = 0;
+
+            plants.forEach(plant => {
+
+                    var watered = new Date(Date.parse(plant.last_time_watered));
+                
+                    var since_watering = Math.floor((now - watered) / (1000*60*60*24)) + d;
+
+                    if(since_watering == 0){
+                        count++;
+
+                    } else if(since_watering % plant.watering_interval == 0){
+                        count++;
+                    }
+            })
+
+            document.getElementById('bar-data-' + d).style.height = 2 + (count * 10) + "px";
+            document.getElementById('bar-data-' + d).style.left = d * 35 + "px";
+        }
+
+    } else {
+
+        updateMenu();
+        renderList();
+        updateInformation();
+
+        goHome();
+    }
 }
 
 function checkUpdate(){
@@ -485,7 +550,8 @@ function checkUpdate(){
                 [
                     'Denna webbsida är till för dig som vill hantera och ha koll på dina växter.',
                     'Börja med att lägga till en växt, det gör du genom att trycka på <span class="material-icons" style="color:white;padding: 0;font-size: 18px;transform: translate(0%, 20%);">add</span>.',
-                ]
+                ],
+                {list: true}
             )
 
             data = {
@@ -501,14 +567,15 @@ function checkUpdate(){
             openModal(
                 'Systemuppdatering',
                 {
-                    badge: 'v. 1.1',
-                    text: 'Tidsmaskins-uppdateringen'
+                    badge: 'v. 1.3',
+                    text: 'Vår-update!'
                 },
                 [
-                    'Se kommande bevattningar, nu upp till 7 dagar framåt i tiden.',
-                    'Ny sammanställningsvy',
-                    'Buggar fixade'
-                ]
+                    'Våren har kommit, och det firas med en ny design!',
+                    'Ny dialogruta vid borttagelse av växter.',
+                    'Bugs på växter borta! :)'
+                ],
+                {list: true}
             )
 
             data = {
@@ -523,18 +590,20 @@ function checkUpdate(){
 
     } else {
 
+        //???
         if(VERSION > JSON.parse(data).meta.version) {
             openModal(
                 'Systemuppdatering',
                 {
-                    badge: 'v. 1.1',
-                    text: 'Tidsmaskins-uppdateringen'
+                    badge: 'v. 1.3',
+                    text: 'Vår-update!'
                 },
                 [
-                    'Se kommande bevattningar, nu upp till 7 dagar framåt i tiden.',
-                    'Ny sammanställningsvy',
-                    'Buggar fixade'
-                ]
+                    'Våren har kommit, och det firas med en ny design!',
+                    'Ny dialogruta vid borttagelse av växter.',
+                    'Bugs på växter borta! :)'
+                ],
+                {list: true}
             )
 
             data = {
@@ -545,8 +614,38 @@ function checkUpdate(){
             }
 
             writeData(data)
+        } else {
+            greet();
         }
     }
+}
+
+function greet(){
+
+    var hour = new Date().getHours()
+    var phrase = ''
+
+    if(hour > 4){
+        phrase = 'Godmorgon'
+    } else if(hour > 10){
+        phrase = 'God förmiddag'
+    } else if(hour > 11){
+        phrase = 'God eftermiddag'
+    } else if(hour > 18){
+        phrase = 'God kväll'
+    }
+
+    var plants_phrase = ''
+
+    if((red+yellow) == 0){
+        plants_phrase = 'Inga växter'
+    } else if((red+yellow) == 1){
+        plants_phrase = 'En växt'
+    } else {
+        plants_phrase = (red+yellow) + ' växter'
+    }
+
+    openModal('Meddelande', {text: phrase}, [plants_phrase + ' behöver vattnas. Ha en fin dag!'], {list: false})
 }
 
 function start(){

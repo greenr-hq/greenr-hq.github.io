@@ -2,6 +2,7 @@
 let modal = document.getElementById('modal-background');
 
 let doneBtn = document.getElementById('done-button');
+let abortBtn = document.getElementById('abort-button');
 
 doneBtn.addEventListener('click', function() {
   modal.classList.remove('open-modal');
@@ -16,7 +17,15 @@ window.addEventListener('click', function(event) {
   }
 });
 
-function openModal(title, subtitle, content){
+function openModal(title, subtitle, content, settings, action){
+
+  
+    doneBtn.removeAttribute('onclick')
+    doneBtn.onclick = null;
+    abortBtn.removeAttribute('onclick')
+    document.getElementById('abort-button').classList.add('hide')
+    doneBtn.innerHTML = 'Okej'
+
     document.getElementById('modal-title').innerHTML = title;
     
     if(subtitle.badge){
@@ -28,20 +37,39 @@ function openModal(title, subtitle, content){
       document.getElementById('modal-subtitle-badge').classList.add('delete')
     }
 
-    document.getElementById('modal-content-container').innerHTML = '';
+    document.getElementById('modal-content-container').innerHTML = ''
 
-    if(Array.isArray(content)){
-      content.forEach(element => {
-        var paragraph = document.createElement("p");
-        paragraph.innerHTML = '• ' + element
-        paragraph.classList.add('modal-content')
-        document.getElementById('modal-content-container').appendChild(paragraph);
-      });
-    } else {
+    var content_prefix = ''
+
+    if(settings.list){
+      content_prefix = '• '
+    }
+
+
+    // PROBLEM
+    // doneBtn har kvar action.execution efter en borttagning.
+    // Konsekvensen blir att den tar bort växt även vid en annan dialog
+
+    content.forEach(element => {
       var paragraph = document.createElement("p");
-      paragraph.innerHTML = content
+      paragraph.innerHTML = content_prefix + element
       paragraph.classList.add('modal-content')
       document.getElementById('modal-content-container').appendChild(paragraph);
+    });
+
+    if(action){
+      document.getElementById('done-button').innerHTML = action.done;
+
+      document.getElementById('abort-button').innerHTML = action.abort;
+      document.getElementById('abort-button').classList.remove('hide')
+      abortBtn.onclick = function() {modal.classList.remove('open-modal');};
+
+      let doneBtn = document.getElementById('done-button');
+
+      doneBtn.onclick = function(){
+        action.execution()
+      };
     }
+
     modal.classList.add('open-modal');
 }

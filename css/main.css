@@ -1,7 +1,9 @@
 body {
-    background-color: rgb(32, 33, 36);
+    background-image: url('../img/background.jpg');
+    background-repeat: no-repeat;
+    background-size: 100%;
     color: rgb(232, 234, 237);
-    font-family: 'Josefin Sans', sans-serif;
+    font-family: 'Khand', sans-serif;
     margin: auto;
     width: 50%;
     overflow: hidden;
@@ -27,7 +29,7 @@ h2 {
 }
 
 .green {
-    color: rgb(50, 168, 82);
+    color: rgb(52, 179, 86);
 }
 
 #subtitle {
@@ -45,7 +47,7 @@ h2 {
     height: 24px;
     line-height: 24px;
     margin-right: 20px;
-    line-height: 17px;
+    line-height: 20px;
 }
 
 #plants {
@@ -62,24 +64,41 @@ h2 {
     margin: 10px
 }
 
+#bar {
+    position: relative;
+    height: 300px;
+    width: 480px;
+    display: table;
+    margin: 0 auto;
+}
+
+.bar-data {
+    position: absolute;
+    border-radius: 5px;
+    width: 25px;
+    background-color: rgb(52, 179, 86);
+    bottom: 0;
+}
+
 .plant {
     transition: all 0.2s linear;
+    border-radius: 8px;
     margin-top: 5px;
     height: 50px;
-    background-color: rgb(61, 62, 65);
+    background-color: rgb(24, 24, 24);
     cursor: pointer;
 }
 
 .plant:hover {
-    background-color: rgb(65, 66, 70);
+    background-color: rgb(34, 34, 34);
 }
 
 .plant.selected {
-    background-color: rgb(89, 90, 95);
+    background-color: rgb(44, 44, 44);
 }
 
 .plant.selected:hover {
-    background-color: rgb(96, 94, 102);
+    background-color: rgb(54, 54, 54);
 }
 
 
@@ -99,36 +118,37 @@ h2 {
 }
 
 .status {
+    border-radius: 8px;
     height: 50px;
-    width: 10px;
+    width: 25px;
     float: left;
 }
 
 .ok {
-    background-color: rgb(50, 168, 82);
+    background-color: rgb(52, 179, 86);
 }
 
 .warning {
-    background-color: rgb(211, 208, 66);
+    background-color: rgb(197, 195, 56);
 }
 
 .danger {
-    background-color: rgb(168, 50, 50);
+    background-color: rgb(180, 52, 52);
 }
 
 span#all {
-    color: rgb(50, 168, 82);
+    color: rgb(52, 179, 86);
     font-weight: 700;
     margin-left: 5px;
 }
 
 span#yellow {
-    color: rgb(211, 208, 66);
+    color: rgb(197, 195, 56);
     font-weight: 700;
 }
 
 span#red {
-    color: rgb(168, 50, 50);
+    color: rgb(180, 52, 52);
     font-weight: 700;
 }
 
@@ -137,7 +157,7 @@ span#red {
     font-size: 15px;
     vertical-align: bottom;
     margin: 0px 5px 9px -3px;
-    color: rgb(211, 208, 66);
+    color: rgb(197, 195, 56);
 }
 
 #danger-icon {
@@ -145,7 +165,7 @@ span#red {
     font-size: 15px;
     vertical-align: bottom;
     margin: 0px 5px 9px -3px;
-    color:  rgb(168, 50, 50);
+    color: rgb(180, 52, 52);
 }
 
 #all-icon {
@@ -153,7 +173,7 @@ span#red {
     font-size: 15px;
     vertical-align: bottom;
     margin: 0px 5px 9px -3px;
-    color: rgb(50, 168, 82);
+    color: rgb(52, 179, 86);
 }
 
 .material-icons {
@@ -207,6 +227,7 @@ span#red {
 
 input {
     transition: all 0.2s linear;
+    border-radius: 8px;
     display: block;
     margin-top: 5px;
     height: 50px;
@@ -214,9 +235,9 @@ input {
     width: 100%;
     font-size: 28px;
     border: 0;
-    background-color: rgb(61, 62, 65);
+    background-color: rgb(24, 24, 24);
     color: rgb(232, 234, 237);
-    font-family: 'Josefin Sans', sans-serif;
+    font-family: 'Khand', sans-serif;
     box-sizing: border-box;
     padding-left: 30px;
     font-weight: 200;
@@ -224,17 +245,17 @@ input {
 }
 
 input:hover {
-    background-color: rgb(65, 66, 70);
+    background-color: rgb(34, 34, 34);
 }
 
 input:focus {
     outline: 0;
-    background-color: rgb(89, 90, 95);
+    background-color: rgb(44, 44, 44);
 }
 
 input:focus:hover {
     outline: 0;
-    background-color: rgb(96, 94, 102);
+    background-color: rgb(54, 54, 54);
 }
 
 input::-webkit-outer-spin-button,
@@ -272,10 +293,10 @@ input[type="date"]::-webkit-calendar-picker-indicator {
 }
 
 ::selection {
-    background: rgb(50, 168, 82);
+    background: rgb(52, 179, 86);
 }
 ::-moz-selection {
-    background: rgb(50, 168, 82);
+    background: rgb(52, 179, 86);
 }
 
 
@@ -295,12 +316,12 @@ input[type="date"]::-webkit-calendar-picker-indicator {
   
   .select-selected {
     transition: all 0.2s linear;
-    background-color: rgb(61, 62, 65);
+    background-color: rgb(24, 24, 24);
     padding: 5px;
     border: 0;
     border-radius: 5px;
     color: rgb(232, 234, 237);
-    font-family: 'Josefin Sans', sans-serif;
+    font-family: 'Khand', sans-serif;
     margin: 0;
   }
   
@@ -333,12 +354,12 @@ input[type="date"]::-webkit-calendar-picker-indicator {
   /*style items (options):*/
   .select-items {
     position: absolute;
-    background-color: rgb(61, 62, 65);
+    background-color: rgb(24, 24, 24);
     padding: 5px;
     border: 0;
     border-radius: 5px;
     color: rgb(232, 234, 237);
-    font-family: 'Josefin Sans', sans-serif;
+    font-family: 'Khand', sans-serif;
     top: 100%;
     left: 0;
     right: 0;
@@ -351,7 +372,7 @@ input[type="date"]::-webkit-calendar-picker-indicator {
   }
   
 option:hover, .same-as-selected {
-    background-color: rgb(65, 66, 70);
+    background-color: rgb(34, 34, 34);
     border-radius: 5px;
 }
 
@@ -375,7 +396,7 @@ option:hover, .same-as-selected {
   }
   
 #modal {
-    background-color: rgb(61, 62, 65);
+    background-color: rgb(24, 24, 24);
     position: absolute;
     top: 50%;
     left: 50%;
@@ -394,8 +415,8 @@ option:hover, .same-as-selected {
     text-transform: uppercase;
     font-weight: 400;
     letter-spacing: -1px;
-    font-size: 16px;
-    color: rgb(50, 168, 82);
+    font-size: 22px;
+    color:rgb(46, 100, 61);
 }
 
 #modal-subtitle {
@@ -405,7 +426,7 @@ option:hover, .same-as-selected {
 
 #modal-subtitle-badge {
     font-size: 25px;
-    background-color: rgb(50, 168, 82);
+    background-color: rgb(52, 179, 86);
     padding: 3px 7px 0px 7px;
     border-radius: 6px;
 }
@@ -419,9 +440,9 @@ option:hover, .same-as-selected {
 }
   
 button {
-    background-color: rgb(89, 90, 95);
+    background-color: rgb(34, 34, 34);
     color: white;
-    font-family: 'Josefin Sans', sans-serif;
+    font-family: 'Khand', sans-serif;
     border: none;
     padding: 10px 30px;
     margin-top: 35px;
@@ -429,8 +450,16 @@ button {
     border-radius: 8px;
 }
 
+.abort-button {
+    background-color: rgba(0,0,0,0);
+}
+
 button:hover {
-    background-color: rgb(96, 94, 102);
+    background-color: rgb(44, 44, 44);
+}
+
+.abort-button:hover {
+    background-color: rgba(34, 34, 34, 0.2);
 }
   
 #close-button {

@@ -8,7 +8,7 @@
     <link rel="icon" type="image/x-icon" href="img/icon.ico" />
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@200;400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Khand:wght@100;200;300;400;500;600;700&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Source+Code+Pro:wght@300&display=swap" rel="stylesheet">
 
@@ -23,6 +23,7 @@
                 <h2 id="modal-subtitle"><span id="modal-subtitle-badge"></span> <span id="modal-subtitle-text"></span></h2>
                 <div id="modal-content-container"></div>
                 <div class="buttons">
+                    <button class="hide abort-button" id="abort-button">Avbryt</button>
                     <button id="done-button">Okej</button>
                 </div>
             </div>
@@ -30,7 +31,7 @@
 
         <div id="pre">
             <h1 id="title"><span class="green">green</span>r</h1>
-            <h3 id="subtitle">version 1.1 av Pim Kennedy</h3>
+            <h3 id="subtitle">version 1.3 av Pim Kennedy</h3>
         </div>
 
         <div id="menu">
@@ -40,6 +41,7 @@
             <span id="edit-icon" class="material-icons select-only" onclick="javascript:edit()">edit</span>
             <span id="delete-icon" class="material-icons select-only" onclick="javascript:remove()">delete</span>
             <span id="refresh-icon" class="material-icons material-icons-available" onclick="javascript:refresh()">cached</span>
+            <span id="bar-icon" class="material-icons material-icons-available" onclick="javascript:bar()">bar_chart</span>
             <span id="information">
                 <span id="red">
                     <span id="red-count"></span> <span id="danger-icon" class="material-icons">error</span>
@@ -53,7 +55,7 @@
                 <span id="time"> • Visar <div id="custom-select-time" class="custom-select">
                         <select>
                             <option>idag</option>
-                            <option id="custom-select-time-default" onclick="javascript:see(0);">idag</option>
+                            <option onclick="javascript:see(0);">idag</option>
                             <option onclick="javascript:see(1);">imorgon</option>
                             <option onclick="javascript:see(2);">i övermorgon</option>
                             <option onclick="javascript:see(3);">om 3 dagar</option>
@@ -73,6 +75,23 @@
             <input type="text" id="location" placeholder="Plats" onkeyup='javascript:inputUpdated()'>
             <input type="date" id="last-time-watered" max="2999-12-31" onkeyup='javascript:inputUpdated()'>
             <input type="number" id="watering-interval" placeholder="Bevattningsintervall (d)" onkeyup='javascript:inputUpdated()'>
+        </div>
+
+        <div id="bar" class="hide">
+            <div id="bar-data-0" class="bar-data"></div>
+            <div id="bar-data-1" class="bar-data"></div>
+            <div id="bar-data-2" class="bar-data"></div>
+            <div id="bar-data-3" class="bar-data"></div>
+            <div id="bar-data-4" class="bar-data"></div>
+            <div id="bar-data-5" class="bar-data"></div>
+            <div id="bar-data-6" class="bar-data"></div>
+            <div id="bar-data-7" class="bar-data"></div>
+            <div id="bar-data-8" class="bar-data"></div>
+            <div id="bar-data-9" class="bar-data"></div>
+            <div id="bar-data-10" class="bar-data"></div>
+            <div id="bar-data-11" class="bar-data"></div>
+            <div id="bar-data-12" class="bar-data"></div>
+            <div id="bar-data-13" class="bar-data"></div>
         </div>
         
     </body>
