@@ -83,20 +83,20 @@ h2 {
     border-radius: 8px;
     margin-top: 5px;
     height: 50px;
-    background-color: rgb(61, 62, 65);
+    background-color: rgb(24, 24, 24);
     cursor: pointer;
 }
 
 .plant:hover {
-    background-color: rgb(65, 66, 70);
+    background-color: rgb(34, 34, 34);
 }
 
 .plant.selected {
-    background-color: rgb(89, 90, 95);
+    background-color: rgb(44, 44, 44);
 }
 
 .plant.selected:hover {
-    background-color: rgb(96, 94, 102);
+    background-color: rgb(54, 54, 54);
 }
 
 
@@ -123,30 +123,30 @@ h2 {
 }
 
 .ok {
-    background-color: rgb(50, 168, 82);
+    background-color: rgb(46, 100, 61);
 }
 
 .warning {
-    background-color: rgb(211, 208, 66);
+    background-color: rgb(182, 180, 72);
 }
 
 .danger {
-    background-color: rgb(168, 50, 50);
+    background-color: rgb(116, 44, 44);
 }
 
 span#all {
-    color: rgb(50, 168, 82);
+    color: rgb(46, 100, 61);
     font-weight: 700;
     margin-left: 5px;
 }
 
 span#yellow {
-    color: rgb(211, 208, 66);
+    color: rgb(182, 180, 72);
     font-weight: 700;
 }
 
 span#red {
-    color: rgb(168, 50, 50);
+    color: rgb(116, 44, 44);
     font-weight: 700;
 }
 
@@ -155,7 +155,7 @@ span#red {
     font-size: 15px;
     vertical-align: bottom;
     margin: 0px 5px 9px -3px;
-    color: rgb(211, 208, 66);
+    color: rgb(182, 180, 72);
 }
 
 #danger-icon {
@@ -163,7 +163,7 @@ span#red {
     font-size: 15px;
     vertical-align: bottom;
     margin: 0px 5px 9px -3px;
-    color:  rgb(168, 50, 50);
+    color:  rgb(116, 44, 44);
 }
 
 #all-icon {
@@ -171,7 +171,7 @@ span#red {
     font-size: 15px;
     vertical-align: bottom;
     margin: 0px 5px 9px -3px;
-    color: rgb(50, 168, 82);
+    color: rgb(46, 100, 61);
 }
 
 .material-icons {
@@ -225,6 +225,7 @@ span#red {
 
 input {
     transition: all 0.2s linear;
+    border-radius: 8px;
     display: block;
     margin-top: 5px;
     height: 50px;
@@ -232,7 +233,7 @@ input {
     width: 100%;
     font-size: 28px;
     border: 0;
-    background-color: rgb(61, 62, 65);
+    background-color: rgb(24, 24, 24);
     color: rgb(232, 234, 237);
     font-family: 'Josefin Sans', sans-serif;
     box-sizing: border-box;
@@ -242,17 +243,17 @@ input {
 }
 
 input:hover {
-    background-color: rgb(65, 66, 70);
+    background-color: rgb(34, 34, 34);
 }
 
 input:focus {
     outline: 0;
-    background-color: rgb(89, 90, 95);
+    background-color: rgb(44, 44, 44);
 }
 
 input:focus:hover {
     outline: 0;
-    background-color: rgb(96, 94, 102);
+    background-color: rgb(54, 54, 54);
 }
 
 input::-webkit-outer-spin-button,
@@ -313,7 +314,7 @@ input[type="date"]::-webkit-calendar-picker-indicator {
   
   .select-selected {
     transition: all 0.2s linear;
-    background-color: rgb(61, 62, 65);
+    background-color: rgb(24, 24, 24);
     padding: 5px;
     border: 0;
     border-radius: 5px;
@@ -351,7 +352,7 @@ input[type="date"]::-webkit-calendar-picker-indicator {
   /*style items (options):*/
   .select-items {
     position: absolute;
-    background-color: rgb(61, 62, 65);
+    background-color: rgb(24, 24, 24);
     padding: 5px;
     border: 0;
     border-radius: 5px;
@@ -369,7 +370,7 @@ input[type="date"]::-webkit-calendar-picker-indicator {
   }
   
 option:hover, .same-as-selected {
-    background-color: rgb(65, 66, 70);
+    background-color: rgb(34, 34, 34);
     border-radius: 5px;
 }
 
@@ -393,7 +394,7 @@ option:hover, .same-as-selected {
   }
   
 #modal {
-    background-color: rgb(61, 62, 65);
+    background-color: rgb(24, 24, 24);
     position: absolute;
     top: 50%;
     left: 50%;
@@ -413,7 +414,7 @@ option:hover, .same-as-selected {
     font-weight: 400;
     letter-spacing: -1px;
     font-size: 16px;
-    color: rgb(50, 168, 82);
+    color:rgb(46, 100, 61);
 }
 
 #modal-subtitle {
@@ -423,7 +424,7 @@ option:hover, .same-as-selected {
 
 #modal-subtitle-badge {
     font-size: 25px;
-    background-color: rgb(50, 168, 82);
+    background-color: rgb(46, 100, 61);
     padding: 3px 7px 0px 7px;
     border-radius: 6px;
 }
