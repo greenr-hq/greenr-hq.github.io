@@ -652,5 +652,4 @@ function start(){
     renderList();
     updateInformation();
     checkUpdate();
-    greet();
 }
