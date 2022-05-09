@@ -21,6 +21,7 @@ function openModal(title, subtitle, content, settings, action){
 
   
     doneBtn.removeAttribute('onclick')
+    doneBtn.onclick = null;
     abortBtn.removeAttribute('onclick')
     document.getElementById('abort-button').classList.add('hide')
     doneBtn.innerHTML = 'Okej'
@@ -43,6 +44,11 @@ function openModal(title, subtitle, content, settings, action){
     if(settings.list){
       content_prefix = '• '
     }
+
+
+    // PROBLEM
+    // doneBtn har kvar action.execution efter en borttagning.
+    // Konsekvensen blir att den tar bort växt även vid en annan dialog
 
     content.forEach(element => {
       var paragraph = document.createElement("p");
