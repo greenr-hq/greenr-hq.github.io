@@ -1,5 +1,5 @@
 body {
-    background-image: src('img/background.jpg');
+    background-image: url('../img/background.jpg')
     background-repeat: no-repeat;
     background-size: 100%;
     color: rgb(232, 234, 237);
@@ -29,7 +29,7 @@ h2 {
 }
 
 .green {
-    color: rgb(50, 168, 82);
+    color: rgb(52, 179, 86);
 }
 
 #subtitle {
@@ -76,7 +76,7 @@ h2 {
     position: absolute;
     border-radius: 5px;
     width: 25px;
-    background-color: rgb(50, 168, 82);
+    background-color: rgb(52, 179, 86);
     bottom: 0;
 }
 
@@ -125,30 +125,30 @@ h2 {
 }
 
 .ok {
-    background-color: rgb(46, 100, 61);
+    background-color: rgb(52, 179, 86);
 }
 
 .warning {
-    background-color: rgb(182, 180, 72);
+    background-color: rgb(197, 195, 56);
 }
 
 .danger {
-    background-color: rgb(116, 44, 44);
+    background-color: rgb(180, 52, 52);
 }
 
 span#all {
-    color: rgb(46, 100, 61);
+    color: rgb(52, 179, 86);
     font-weight: 700;
     margin-left: 5px;
 }
 
 span#yellow {
-    color: rgb(182, 180, 72);
+    color: rgb(197, 195, 56);
     font-weight: 700;
 }
 
 span#red {
-    color: rgb(116, 44, 44);
+    color: rgb(180, 52, 52);
     font-weight: 700;
 }
 
@@ -157,7 +157,7 @@ span#red {
     font-size: 15px;
     vertical-align: bottom;
     margin: 0px 5px 9px -3px;
-    color: rgb(182, 180, 72);
+    color: rgb(197, 195, 56);
 }
 
 #danger-icon {
@@ -165,7 +165,7 @@ span#red {
     font-size: 15px;
     vertical-align: bottom;
     margin: 0px 5px 9px -3px;
-    color:  rgb(116, 44, 44);
+    color: rgb(180, 52, 52);
 }
 
 #all-icon {
@@ -173,7 +173,7 @@ span#red {
     font-size: 15px;
     vertical-align: bottom;
     margin: 0px 5px 9px -3px;
-    color: rgb(46, 100, 61);
+    color: rgb(52, 179, 86);
 }
 
 .material-icons {
@@ -293,10 +293,10 @@ input[type="date"]::-webkit-calendar-picker-indicator {
 }
 
 ::selection {
-    background: rgb(50, 168, 82);
+    background: rgb(52, 179, 86);
 }
 ::-moz-selection {
-    background: rgb(50, 168, 82);
+    background: rgb(52, 179, 86);
 }
 
 
@@ -426,7 +426,7 @@ option:hover, .same-as-selected {
 
 #modal-subtitle-badge {
     font-size: 25px;
-    background-color: rgb(46, 100, 61);
+    background-color: rgb(52, 179, 86);
     padding: 3px 7px 0px 7px;
     border-radius: 6px;
 }
