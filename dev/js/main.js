@@ -1,4 +1,4 @@
-const VERSION = '12'
+const VERSION = '13'
 const STORAGE_PROTOCOL = '1'
 
 var plants = [];
@@ -567,11 +567,11 @@ function checkUpdate(){
             openModal(
                 'Systemuppdatering',
                 {
-                    badge: 'v. 1.2',
-                    text: 'Bättre syn på framtiden!'
+                    badge: 'v. 1.3',
+                    text: 'Vår-update!'
                 },
                 [
-                    'Du kan nu se en graf på kommande bevattningar.',
+                    'Våren har kommit, och det firas med en ny design!',
                     'Ny dialogruta vid borttagelse av växter.',
                     'Bugs på växter borta! :)'
                 ],
@@ -595,11 +595,11 @@ function checkUpdate(){
             openModal(
                 'Systemuppdatering',
                 {
-                    badge: 'v. 1.2',
-                    text: 'Bättre syn på framtiden!'
+                    badge: 'v. 1.3',
+                    text: 'Vår-update!'
                 },
                 [
-                    'Du kan nu se en graf på kommande bevattningar.',
+                    'Våren har kommit, och det firas med en ny design!',
                     'Ny dialogruta vid borttagelse av växter.',
                     'Bugs på växter borta! :)'
                 ],
