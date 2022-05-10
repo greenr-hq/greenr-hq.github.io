@@ -57,7 +57,7 @@ function renderList(delay = 0){
     });
 
     if(red > 0){
-        var data = readData()
+        var data = JSON.parse(readData())
         data.streak == 0
 
         writeData(data)
@@ -188,7 +188,7 @@ function water(){
             if((red+yellow) == 0){
 
 
-                var data = readData()
+                var data = JSON.parse(readData())
                 data.streak += 1
 
                 writeData(data)
