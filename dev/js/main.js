@@ -55,6 +55,13 @@ function renderList(delay = 0){
 
         id++;
     });
+
+    if(red > 0){
+        var data = readData()
+        data.streak == 0
+
+        writeData(data)
+    }
 }
 
 function pick(id){
@@ -177,6 +184,17 @@ function water(){
             updateMenu();
             renderList();
             updateInformation();
+
+            if((red+yellow) == 0){
+
+
+                var data = readData()
+                data.streak += 1
+
+                writeData(data)
+
+                openModal('Meddelande', {text: 'Bra jobbat!'}, ['Du har vattnat alla dagens växter! Din streak är nu ' + getStreak() + ''], {list: false})
+            }
         }
     }
 }
@@ -620,19 +638,38 @@ function checkUpdate(){
     }
 }
 
+function getStreak(){
+
+    var data = readData()
+    var streak = JSON.parse(data).streak
+
+    if(streak == ''){
+        streak = 0
+    }
+
+    return streak
+}
+
 function greet(){
 
     var hour = new Date().getHours()
+    var minute = new Date().getMinutes()
     var phrase = ''
 
-    if(hour > 4){
-        phrase = 'Godmorgon'
-    } else if(hour > 10){
-        phrase = 'God förmiddag'
-    } else if(hour > 11){
-        phrase = 'God eftermiddag'
-    } else if(hour > 18){
+    if(hour < 4){
         phrase = 'God kväll'
+    } else if(hour < 11){
+        phrase = 'God morgon'
+    } else if(hour < 12){
+        phrase = 'God förmiddag'
+    } else if(hour < 18){
+        phrase = 'God eftermiddag'
+    } else {
+        phrase = 'God kväll'
+    }
+
+    if(hour == 13 && minute == 37){
+        phrase = 'Klockan är 1337 Eliteeee!'
     }
 
     var plants_phrase = ''
